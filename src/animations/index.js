@@ -1,2 +1,2 @@
-export { default as ElasticTrailAnimation } from './ElasticTrailAnimation'
+export { default as SqueezeTrail } from './SqueezeTrail'
 export { default as SqueezeSpring } from './SqueezeSpring'

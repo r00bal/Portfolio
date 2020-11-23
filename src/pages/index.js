@@ -1,7 +1,7 @@
 import React from 'react'
 import { Layout } from '../layouts'
 import { Intro } from '../components'
-import { ElasticTrailAnimation, SqueezeSpring } from '../animations'
+import { SqueezeTrail, SqueezeSpring } from '../animations'
 
 const HeroTitle = "Hi, I'm Peter."
 const HeroText = 'I love to code and to build things on the interent'
@@ -12,20 +12,24 @@ export default function Home() {
       <Intro flexDirection="column" justifyContent="center">
         <Intro.Title>
           {/* Test */}
-          <ElasticTrailAnimation>
-            {HeroTitle.split('').map((element) => (
-              <SqueezeSpring>{element}</SqueezeSpring>
-            ))}
-          </ElasticTrailAnimation>
-          {/* Test */}
-          {/* <Intro.Special color="var(--yellow-color)" shadow="var(--blue-color)">
-            H
-          </Intro.Special>
-          i, I'm{' '}
-          <Intro.Special color="var(--green-color)" shadow="var(--red-color)">
-            P
-          </Intro.Special>
-          eter<Intro.Special color="var(--sky-color)">.</Intro.Special> */}
+          <SqueezeTrail>
+            {HeroTitle.split('').map((l) => {
+              if (l === ' ') return l
+              if (l === 'H')
+                return (
+                  <Intro.Special color="var(--yellow-color)" shadow="var(--blue-color)">
+                    <SqueezeSpring>{l}</SqueezeSpring>
+                  </Intro.Special>
+                )
+              if (l === 'P')
+                return (
+                  <Intro.Special color="var(--green-color)" shadow="var(--red-color)">
+                    <SqueezeSpring>{l}</SqueezeSpring>
+                  </Intro.Special>
+                )
+              return <SqueezeSpring>{l}</SqueezeSpring>
+            })}
+          </SqueezeTrail>
         </Intro.Title>
         <Intro.Text>I love to code and build things on the internet.</Intro.Text>
       </Intro>

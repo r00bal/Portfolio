@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSpring, animated, interpolate } from 'react-spring'
 
-const SqueezeSpring = ({ children }) => {
+const SqueezeSpring = ({ children, ...rest }) => {
   const [state, toggle] = useState(false)
   const { x, y } = useSpring({
     from: { x: !state ? 1 : 0, y: !state ? 1 : 0 },
@@ -15,6 +15,8 @@ const SqueezeSpring = ({ children }) => {
     <animated.span
       onMouseEnter={() => toggle(true)}
       style={{
+        ...rest,
+        display: 'inline-flex',
         transform: interpolate(
           [
             x.interpolate({
