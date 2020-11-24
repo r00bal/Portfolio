@@ -8,6 +8,7 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSpring, animated, interpolate } from 'react-spring'
 import styled from 'styled-components'
 
-const SqueezeSpring = ({ children, hover }) => {
+const SqueezeSpring = ({ children }) => {
   const [state, toggle] = useState(false)
   const { x, y } = useSpring({
     from: { x: !state ? 1 : 0, y: !state ? 1 : 0 },

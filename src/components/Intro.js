@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import { flexProps } from '../utils/CssHelpers'
 
 const Container = styled.div`
-  display: flex;
-  max-width: 1000px;
   ${flexProps}
-  margin-top:15%;
+  height: 100%;
+  ${({ width }) => (width ? `width: ${width};` : `width:100%;`)}
+  ${({ maxWidth }) => (maxWidth ? `max-width: ${maxWidth};` : null)}
+  margin-top:5%;
 `
 
 const Text = styled.p`
