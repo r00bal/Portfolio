@@ -1,10 +1,11 @@
 import React, { useState, useMemo, Fragment } from 'react'
 import { useSpring, animated, interpolate, config, useTrail } from 'react-spring'
 
-export default function SqueezeTrail({ children, comp }) {
+export default function SqueezeTrail({ children, delay = 0 }) {
   const items = React.Children.toArray(children)
-  const [state, toggle] = useState(false)
+
   const trail = useTrail(items.length, {
+    // config: { mass: 5, tension: 2000, friction: 135 },
     config: { mass: 5, tension: 2000, friction: 135 },
     opacity: 1,
     x: 1,
@@ -15,6 +16,7 @@ export default function SqueezeTrail({ children, comp }) {
       x: 0,
       y: 0,
     },
+    delay,
   })
 
   return (
@@ -26,7 +28,6 @@ export default function SqueezeTrail({ children, comp }) {
         return (
           <animated.span
             key={`${items[index]}_${index}`}
-            onMouseEnter={() => toggle(true)}
             style={{
               ...rest,
               display: 'inline-flex',

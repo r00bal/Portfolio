@@ -1,10 +1,9 @@
 import React from 'react'
 import { Layout } from '../layouts'
 import { Intro } from '../components'
-import { SqueezeTrail, SqueezeSpring } from '../animations'
+import { SqueezeTrail, SqueezeSpring, FadeInSpring } from '../animations'
 
 const HeroTitle = "Hi, I'm Peter."
-const HeroText = 'I love to code and to build things on the interent'
 
 export default function Home() {
   return (
@@ -12,18 +11,18 @@ export default function Home() {
       <Intro flexDirection="column" justifyContent="center">
         <Intro.Title>
           {/* Test */}
-          <SqueezeTrail>
+          <SqueezeTrail delay={500}>
             {HeroTitle.split('').map((l) => {
               if (l === ' ') return l
               if (l === 'H')
                 return (
-                  <Intro.Special color="var(--yellow-color)" shadow="var(--blue-color)">
+                  <Intro.Special size="10rem" color="var(--yellow-color)" shadow="var(--blue-color)">
                     <SqueezeSpring>{l}</SqueezeSpring>
                   </Intro.Special>
                 )
               if (l === 'P')
                 return (
-                  <Intro.Special color="var(--green-color)" shadow="var(--red-color)">
+                  <Intro.Special size="10rem" color="var(--green-color)" shadow="var(--red-color)">
                     <SqueezeSpring>{l}</SqueezeSpring>
                   </Intro.Special>
                 )
@@ -31,7 +30,10 @@ export default function Home() {
             })}
           </SqueezeTrail>
         </Intro.Title>
-        <Intro.Text>I love to code and build things on the internet.</Intro.Text>
+
+        <Intro.Text>
+          <FadeInSpring delay={1000}>I love to code and build things on the internet.</FadeInSpring>
+        </Intro.Text>
       </Intro>
     </Layout>
   )

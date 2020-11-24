@@ -6,7 +6,7 @@ const Container = styled.div`
   display: flex;
   max-width: 1000px;
   ${flexProps}
-  margin-top:20%;
+  margin-top:15%;
 `
 
 const Text = styled.p`
@@ -24,6 +24,7 @@ const Title = styled.h1`
 `
 
 const Special = styled.span`
+  ${({ size }) => (size ? `font-size: ${size};` : null)}
   ${({ color }) => (color ? `color: ${color};` : null)}
   ${({ shadow }) => (shadow ? `text-shadow: 7px 7px ${shadow};` : null)}
 `
