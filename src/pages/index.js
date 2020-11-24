@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout>
       <Intro flexDirection="column" justifyContent="center">
-        <Intro.Title>
+        <Intro.Title hoverColor="var(--green-color)">
           {/* Test */}
           <SqueezeTrail delay={500}>
             {HeroTitle.split('').map((l) => {

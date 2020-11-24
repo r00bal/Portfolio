@@ -21,12 +21,18 @@ const Title = styled.h1`
   letter-spacing: 0;
   margin: 50px 0 0 0;
   text-align: center;
+  transition: all 0.2s;
 `
 
 const Special = styled.span`
   ${({ size }) => (size ? `font-size: ${size};` : null)}
   ${({ color }) => (color ? `color: ${color};` : null)}
   ${({ shadow }) => (shadow ? `text-shadow: 7px 7px ${shadow};` : null)}
+  transition: all 0.2s;
+  &:hover {
+    ${({ color }) => (color ? `text-shadow: 7px 7px ${color};` : null)}
+    ${({ shadow }) => (shadow ? `color: ${shadow};` : null)}
+  }
 `
 
 export default function Intro({ children, ...restProps }) {
