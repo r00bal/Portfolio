@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { flexProps, marginProps } from '../utils/CssHelpers'
+import { flexProps, marginProps } from '../utils/css-helpers'
 import { Button } from '.'
 
 const Container = styled.footer`

@@ -12,7 +12,6 @@ export default function Home() {
     <Layout>
       <Intro flexDirection="column" justifyContent="center" maxWidth="1000px">
         <Intro.Title hoverColor="var(--green-color)">
-          {/* Test */}
           <SqueezeTrail delay={500}>
             {HeroTitle.split('').map((l) => {
               if (l === ' ') return l
@@ -32,7 +31,6 @@ export default function Home() {
             })}
           </SqueezeTrail>
         </Intro.Title>
-
         <Intro.Text>
           <FadeInSpring delay={1000}>I love to code and build things on the internet.</FadeInSpring>
         </Intro.Text>
@@ -42,7 +40,7 @@ export default function Home() {
         flexDirection="row"
         justifyContent="space-between"
         alignItems="center"
-        maxWidth="500px"
+        maxWidth="400px"
         margin="10% 0 0 0"
       >
         <FadeInSpring style={{ width: '100%' }} delay={1400}>
@@ -57,13 +55,13 @@ export default function Home() {
             width="200px"
           >
             <Footer.IconLink href="#" color="var(--green-color)">
-              <FontAwesomeIcon size="2x" icon={['fab', 'github']} title="github account for deSolidState" />
+              <FontAwesomeIcon size="2x" icon={['fab', 'github']} title="github account for Peter" />
             </Footer.IconLink>
             <Footer.IconLink href="#" color="var(--red-color)">
-              <FontAwesomeIcon size="2x" icon={['fab', 'codepen']} title="github account for deSolidState" />
+              <FontAwesomeIcon size="2x" icon={['fab', 'codepen']} title="codepen account for Peter" />
             </Footer.IconLink>
             <Footer.IconLink href="#" color="var(--blue-color)">
-              <FontAwesomeIcon size="2x" icon={['fab', 'linkedin']} title="github account for deSolidState" />
+              <FontAwesomeIcon size="2x" icon={['fab', 'linkedin']} title="linkedin account for Peter" />
             </Footer.IconLink>
             <Footer.IconLink href="#" color="var(--sky-color)">
               <FontAwesomeIcon size="2x" icon="paper-plane" />
