@@ -43,7 +43,7 @@ export default function Home() {
                 return <SqueezeSpring>{l}</SqueezeSpring>
               })}
             </SqueezeTrail>
-          </NoWrap>
+          </NoWrap>{' '}
           <Br />
           <NoWrap>
             <SqueezeTrail delay={600}>

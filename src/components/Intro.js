@@ -1,17 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { flexProps, mediaAbove } from '../utils/css-helpers'
+import { mediaAbove } from '../utils/css-helpers'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  ${mediaAbove.mediumScreen`
-  ${flexProps}
-  ${({ width }) => (width ? `width: ${width};` : `width:100%;`)}
-  ${({ maxWidth }) => (maxWidth ? `max-width: ${maxWidth};` : null)}
-  `}
 `
 
 const Text = styled.p`
