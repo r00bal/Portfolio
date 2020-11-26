@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { flexProps } from '../utils/css-helpers'
+import { mediaAbove } from '../utils/css-helpers'
 
 const Container = styled.nav`
-  ${flexProps}
+  display: flex;
+  width: 100%;
 `
 
 const NavLink = styled(Link)`
+  font-size: 14px;
   color: var(--black-color);
   text-decoration: none;
   cursor: pointer;
@@ -24,14 +26,23 @@ const NavLink = styled(Link)`
 `
 
 const List = styled.ul`
-  ${flexProps}
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   .active {
     color: var(--green-color);
   }
+  ${mediaAbove.smallScreen`
+    justify-content: center;
+  `}
+  ${mediaAbove.mediumScreen`
+    justify-content: flex-end;
+  `}
 `
 
 const Item = styled.li`
-  margin-left: 30px;
   position: relative;
   svg {
     display: flex;
@@ -44,7 +55,7 @@ const Item = styled.li`
     left: 0;
     right: 0;
     visibility: hidden;
-    color:var(--blue-color);
+    color: var(--blue-color);
   }
   .active {
     span {
@@ -53,7 +64,10 @@ const Item = styled.li`
     svg {
       visibility: visible;
     }
-
+  }
+  ${mediaAbove.smallScreen`
+    margin-left: 30px;
+  `}
 `
 
 const Text = styled.span``

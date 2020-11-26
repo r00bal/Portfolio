@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { flexProps } from '../utils/css-helpers'
+import { flexProps, mediaAbove } from '../utils/css-helpers'
 
 const Container = styled.header`
   padding: 1rem;
@@ -10,27 +10,26 @@ const Container = styled.header`
   //background-color: var(--green-color);
   background-color: var(--white-color);
   display: flex;
-  ${flexProps}
-  height:60px;
-  //border-bottom: 1px solid black;
-`
-
-const HeaderBox = styled.div`
-  display: flex;
-  ${flexProps}
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  ${mediaAbove.mediumScreen`
+ justify-content: space-between;
+`}//border-bottom: 1px solid black;
 `
 
 const HeaderTitle = styled.h1`
+  display: none;
+  ${mediaAbove.mediumScreen`
+  display: block;
   font-size: 1.5rem;
   font-weight: 300;
+`}
 `
 
 export default function Header({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>
-}
-
-Header.Box = function Box({ children, ...restProps }) {
-  return <HeaderBox {...restProps}>{children}</HeaderBox>
 }
 
 Header.Title = function Title({ children, ...restProps }) {

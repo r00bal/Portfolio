@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Nav, Header } from '../components'
-import { flexProps } from '../utils/css-helpers'
+import { flexProps, mediaAbove } from '../utils/css-helpers'
 import { GlobalStyle } from '../utils/global-styles'
 import '../utils/font-awesome'
 
@@ -12,15 +12,18 @@ const Main = styled.main`
   ${flexProps}
   max-width:1200px;
   margin: 0 auto;
+  padding: 2rem;
+  ${mediaAbove.mediumScreen`
   padding: 1rem;
+`}
 `
 const Layout = ({ children, flexDirection, justifyContent, alignItems }) => (
   <>
     <GlobalStyle />
-    <Header flexDirection="row" justifyContent="space-between" alignItems="center">
+    <Header>
       <Header.Title>Portfolio</Header.Title>
       <Nav>
-        <Nav.List flexDirection="row" justifyContent="center" alignItems="center">
+        <Nav.List>
           <Nav.Item>
             <Nav.Link activeClassName="active" to="/">
               <Nav.Text>Home</Nav.Text>

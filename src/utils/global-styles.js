@@ -45,11 +45,11 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Source Code Pro';
     box-sizing: border-box;
     list-style: none;
+    font-size:16px;
   }
   html {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: "Roboto", sans-serif;
 }
 
 *, *:before, *:after {

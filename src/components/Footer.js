@@ -1,22 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
-import { flexProps, marginProps } from '../utils/css-helpers'
+import { mediaAbove, marginProps } from '../utils/css-helpers'
 import { Button } from '.'
 
 const Container = styled.footer`
-  ${({ width }) => (width ? `width: ${width};` : `width:100%;`)}
-  ${({ maxWidth }) => (maxWidth ? `max-width: ${maxWidth};` : null)}
-  ${flexProps}
-  ${marginProps}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 10% 0 0 0;
+  ${mediaAbove.smallScreen`
+  flex-direction: row;
+`}
 `
 
 const FooterButtonLink = styled(Button)``
 
 const Box = styled.div`
-  ${({ width }) => (width ? `width: ${width};` : `width:100%;`)}
-  ${({ maxWidth }) => (maxWidth ? `max-width: ${maxWidth};` : null)}
-  ${flexProps}
-  ${marginProps}
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+  align-content: space-between;
+
+  width: 200px;
+  margin-top: 2rem;
+  ${mediaAbove.smallScreen`
+   margin:0px;
+`}
 `
 
 const IconLink = styled.a`

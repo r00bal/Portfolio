@@ -12,3 +12,20 @@ export const flexProps = css`
 export const marginProps = css`
   ${({ margin }) => (margin ? `margin: ${margin};` : null)}
 `
+
+export const size = {
+  smallScreen: 548,
+  mediumScreen: 960,
+  largeScreen: 1140,
+}
+
+export const mediaAbove = Object.keys(size).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (min-width: ${size[label]}px) {
+      ${css(...args)}
+    }
+  `
+  return acc
+}, {})
+
+console.log('mediaAbove', mediaAbove)
