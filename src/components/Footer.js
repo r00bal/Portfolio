@@ -27,10 +27,10 @@ const Box = styled.div`
   align-content: center;
   width: 100%;
   max-width: 250px;
-  margin-top: 2rem;
+  margin-top: 3rem;
   ${mediaAbove.smallScreen`
    margin:0px;
-   max-width: 350px;
+   
 `}
 `
 
