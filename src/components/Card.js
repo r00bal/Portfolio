@@ -10,22 +10,22 @@ const Container = styled.div`
 `
 
 const Text = styled.p`
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 200;
   margin: 20px 0;
   ${mediaAbove.smallScreen`
-  font-size: ${({ introMode }) => (introMode ? `2.4rem` : `1.4rem`)};
+  font-size: ${({ introMode }) => (introMode ? `3.4rem` : `1.4rem`)};
  
 `}
 
   ${mediaAbove.mediumScreen`
-  font-size: ${({ introMode }) => (introMode ? `3.4rem` : `1.8rem`)};
+  font-size: ${({ introMode }) => (introMode ? `4.4rem` : `1.8rem`)};
   margin: 50px 0 0 20px;
 `}
 `
 
 const Title = styled.h2`
-  font-size: ${({ introMode }) => (introMode ? `2.4rem` : `1.4rem`)};
+  font-size: ${({ introMode }) => (introMode ? `3.4rem` : `1.4rem`)};
   font-weight: 700;
   letter-spacing: 0;
   max-width: 100%;
@@ -34,19 +34,19 @@ const Title = styled.h2`
   transition: all 0.2s;
   ${mediaAbove.smallScreen`
   
-  font-size: ${({ introMode }) => (introMode ? `5.4rem` : `2.2rem`)};
+  font-size: ${({ introMode }) => (introMode ? `4.4rem` : `2.2rem`)};
   max-width: 800px;
   
 `}
   ${mediaAbove.mediumScreen`
-  font-size: ${({ introMode }) => (introMode ? `9.4rem` : `3rem`)};
+  font-size: ${({ introMode }) => (introMode ? `10.4rem` : `3rem`)};
   max-width: 100%;
   
 `}
 `
 
 const Special = styled.span`
-  font-size: ${({ introMode }) => (introMode ? `3rem` : `2.2rem`)};
+  font-size: ${({ introMode }) => (introMode ? `6rem` : `2.2rem`)};
   ${({ color }) => (color ? `color: ${color};` : null)}
   ${({ shadow }) => (shadow ? `text-shadow: 3px 3px ${shadow};` : null)}
   transition: all 0.2s;
@@ -56,14 +56,14 @@ const Special = styled.span`
   }
   ${mediaAbove.smallScreen`
    ${({ shadow }) => (shadow ? `text-shadow: 5px 5px ${shadow};` : null)}
-   font-size: ${({ introMode }) => (introMode ? `6rem` : `3rem`)};
+   font-size: ${({ introMode }) => (introMode ? `8rem` : `3rem`)};
      &:hover {
     ${({ color, shadow }) => (color && shadow ? `text-shadow: 5px 5px ${color};` : null)}
    
   `}
   ${mediaAbove.mediumScreen`
    ${({ shadow }) => (shadow ? `text-shadow: 7px 7px ${shadow};` : null)}
-   font-size: ${({ introMode }) => (introMode ? `10rem` : `3.8rem`)};
+   font-size: ${({ introMode }) => (introMode ? `14rem` : `3.8rem`)};
      &:hover {
     ${({ color, shadow }) => (color && shadow ? `text-shadow: 7px 7px ${color};` : null)}
    

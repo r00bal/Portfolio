@@ -18,8 +18,8 @@ const NoWrap = styled.div`
   align-items: flex-end;
 `
 const Br = styled.br`
-  ${mediaAbove.smallScreen`
-  display:none;
+  /* ${mediaAbove.smallScreen`
+  display:none; */
 `}
 `
 
