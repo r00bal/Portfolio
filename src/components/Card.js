@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { mediaAbove } from '../utils/css-helpers'
 
 const Container = styled.div`
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,11 +29,11 @@ const Title = styled.h2`
   font-weight: 700;
   letter-spacing: 0;
   max-width: 100%;
-  margin: 80px 0 0 0;
+
   text-align: left;
   transition: all 0.2s;
   ${mediaAbove.smallScreen`
-  margin: 100px 0 0;
+  
   font-size: ${({ introMode }) => (introMode ? `5.4rem` : `2.2rem`)};
   max-width: 800px;
   
@@ -40,7 +41,7 @@ const Title = styled.h2`
   ${mediaAbove.mediumScreen`
   font-size: ${({ introMode }) => (introMode ? `9.4rem` : `3rem`)};
   max-width: 100%;
-  margin:10% 0 0 0;
+  
 `}
 `
 

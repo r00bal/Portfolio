@@ -7,9 +7,14 @@ import { GlobalStyle } from '../utils/global-styles'
 import '../utils/font-awesome'
 
 const Main = styled.main`
+  height: calc(100% - calc(80px + 16px + 16px));
+  width: 100%;
   display: flex;
   flex-direction: column;
-  ${flexProps}
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+
   ${maxWidth}
   margin: 0 auto;
   padding: 1rem;
@@ -20,7 +25,7 @@ const Main = styled.main`
   padding: 3rem;
 `}
 `
-const Layout = ({ children, flexDirection, justifyContent, alignItems }) => (
+const Layout = ({ children }) => (
   <>
     <GlobalStyle />
     <Header>
@@ -62,9 +67,7 @@ const Layout = ({ children, flexDirection, justifyContent, alignItems }) => (
         </Nav>
       </Header.Wrapper>
     </Header>
-    <Main flexDirection="column" justifyContent="center" alignItems="center">
-      {children}
-    </Main>
+    <Main>{children}</Main>
   </>
 )
 

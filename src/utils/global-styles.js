@@ -36,10 +36,15 @@ export const GlobalStyle = createGlobalStyle`
     --yellow-color: #FAEA8B;
     --red-color: #FF0054; */
 }
-html, body {
-  box-sizing: border-box;
-  
-  margin: 0;
+* {
+  box-sizing:border-box;
+}
+
+    html, body, #___gatsby, #gatsby-focus-wrapper {
+    
+  width:100%;
+  height:100%;
+    margin: 0;
     padding: 0;
 }
 

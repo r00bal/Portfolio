@@ -4,13 +4,14 @@ import { mediaAbove } from '../utils/css-helpers'
 import { Button } from '.'
 
 const Container = styled.footer`
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 
-  margin: 10% 0 0 0;
+  //margin: 10% 0 0 0;
   ${mediaAbove.smallScreen`
   flex-direction: row;
   max-width: 800px;
@@ -22,12 +23,10 @@ const FooterButtonLink = styled(Button)``
 const Box = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  align-content: center;
   width: 100%;
   max-width: 250px;
-  margin-top: 3rem;
+  margin-top: 2rem;
   ${mediaAbove.smallScreen`
    margin:0px;
    
@@ -35,6 +34,7 @@ const Box = styled.div`
 `
 
 const IconLink = styled.a`
+  padding: 1rem;
   text-decoration: none;
   font-size: 0.8rem;
   cursor: pointer;
