@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
   --main12-background-color: #8F98B0;
   --main12-background-color: #F5A18E;
   --main13-background-color: #FBF5D8;
-
+  --main14-background-color:#E5D2B9;
   --main-background-color: #F2EAE4;
   --main9-background-color: #E4EDF2;
     --black-color: #000000;
@@ -36,21 +36,23 @@ export const GlobalStyle = createGlobalStyle`
     --yellow-color: #FAEA8B;
     --red-color: #FF0054; */
 }
+html, body {
+  box-sizing: border-box;
+  
+  margin: 0;
+    padding: 0;
+}
 
   body {
-    margin: 0;
-    padding: 0;
+    font-size: 16px;
     font-weight: normal;
-    background-color: var(--white-color);
+    background-color: var(--main14-background-color);
     font-family: 'Source Code Pro';
     box-sizing: border-box;
     list-style: none;
     font-size:16px;
   }
-  html {
-  box-sizing: border-box;
-  font-size: 16px;
-}
+
 
 *, *:before, *:after {
   box-sizing: inherit;

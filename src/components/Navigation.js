@@ -6,10 +6,14 @@ import { mediaAbove } from '../utils/css-helpers'
 const Container = styled.nav`
   display: flex;
   width: 100%;
+
+  ${mediaAbove.smallScreen`
+  width:fit-content;
+  `}
 `
 
 const NavLink = styled(Link)`
-  font-size: 14px;
+  font-size: 0.8rem;
   color: var(--black-color);
   text-decoration: none;
   cursor: pointer;
@@ -23,6 +27,9 @@ const NavLink = styled(Link)`
       visibility: visible;
     }
   }
+  ${mediaAbove.smallScreen`
+  font-size: 1.4rem;
+  `}
 `
 
 const List = styled.ul`
@@ -32,12 +39,13 @@ const List = styled.ul`
   justify-content: space-between;
   align-items: center;
   .active {
-    color: var(--green-color);
+    color: var(--sky-color);
   }
   ${mediaAbove.smallScreen`
     justify-content: center;
   `}
   ${mediaAbove.mediumScreen`
+  
     justify-content: flex-end;
   `}
 `
@@ -55,7 +63,7 @@ const Item = styled.li`
     left: 0;
     right: 0;
     visibility: hidden;
-    color: var(--blue-color);
+    color: var(--sky-color);
   }
   .active {
     span {

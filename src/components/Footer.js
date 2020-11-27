@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { mediaAbove, marginProps } from '../utils/css-helpers'
+import { mediaAbove } from '../utils/css-helpers'
 import { Button } from '.'
 
 const Container = styled.footer`
@@ -9,10 +9,11 @@ const Container = styled.footer`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 400px;
+
   margin: 10% 0 0 0;
   ${mediaAbove.smallScreen`
   flex-direction: row;
+  max-width: 800px;
 `}
 `
 
@@ -22,24 +23,32 @@ const Box = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: space-between;
-  align-content: space-between;
-
-  width: 200px;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  max-width: 250px;
   margin-top: 2rem;
   ${mediaAbove.smallScreen`
    margin:0px;
+   max-width: 350px;
 `}
 `
 
 const IconLink = styled.a`
   text-decoration: none;
+  font-size: 0.8rem;
   cursor: pointer;
   color: inherit;
   ${({ color }) => (color ? `color: ${color};` : `inherit`)}
   &:hover {
     color: #000;
   }
+  ${mediaAbove.smallScreen`
+   font-size: 1rem;
+`}
+  ${mediaAbove.mediumScreen`
+   font-size: 1.5rem;
+`}
 `
 
 export default function Footer({ children, ...restProps }) {

@@ -13,6 +13,10 @@ export const marginProps = css`
   ${({ margin }) => (margin ? `margin: ${margin};` : null)}
 `
 
+export const maxWidth = css`
+  max-width: 1540px;
+`
+
 export const size = {
   smallScreen: 548,
   mediumScreen: 960,

@@ -1,10 +1,10 @@
-import React, { createRef } from 'react'
-import { useChain } from 'react-spring'
+import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Layout } from '../layouts'
-import { Intro, Footer } from '../components'
+import { Card, Footer } from '../components'
 import { SqueezeTrail, SqueezeSpring, FadeInSpring } from '../animations'
+import { mediaAbove } from '../utils/css-helpers'
 import '../utils/font-awesome'
 
 const HI = 'Hi,'
@@ -17,28 +17,32 @@ const NoWrap = styled.div`
   justify-content: center;
   align-items: flex-end;
 `
-const Br = styled.br``
+const Br = styled.br`
+  ${mediaAbove.smallScreen`
+  display:none;
+`}
+`
 
 export default function Home() {
   return (
     <Layout>
-      <Intro>
-        <Intro.Title hoverColor="var(--green-color)">
+      <Card introMode>
+        <Card.Title hoverColor="var(--green-color)">
           <NoWrap>
             <SqueezeTrail delay={500}>
               {HI.split('').map((l) => {
                 if (l === ' ') return l
                 if (l === 'H')
                   return (
-                    <Intro.Special color="var(--yellow-color)" shadow="var(--blue-color)">
+                    <Card.Special color="var(--yellow-color)" shadow="var(--blue-color)">
                       <SqueezeSpring>{l}</SqueezeSpring>
-                    </Intro.Special>
+                    </Card.Special>
                   )
                 if (l === 'P')
                   return (
-                    <Intro.Special color="var(--green-color)" shadow="var(--red-color)">
+                    <Card.Special color="var(--green-color)" shadow="var(--red-color)">
                       <SqueezeSpring>{l}</SqueezeSpring>
-                    </Intro.Special>
+                    </Card.Special>
                   )
                 return <SqueezeSpring>{l}</SqueezeSpring>
               })}
@@ -51,21 +55,21 @@ export default function Home() {
                 if (l === ' ') return l
                 if (l === 'I')
                   return (
-                    <Intro.Special color="var(--sky-black)">
+                    <Card.Special color="var(--sky-black)">
                       <SqueezeSpring>{l}</SqueezeSpring>
-                    </Intro.Special>
+                    </Card.Special>
                   )
                 if (l === 'H')
                   return (
-                    <Intro.Special color="var(--yellow-color)" shadow="var(--blue-color)">
+                    <Card.Special color="var(--yellow-color)" shadow="var(--blue-color)">
                       <SqueezeSpring>{l}</SqueezeSpring>
-                    </Intro.Special>
+                    </Card.Special>
                   )
                 if (l === 'P')
                   return (
-                    <Intro.Special color="var(--green-color)" shadow="var(--red-color)">
+                    <Card.Special color="var(--green-color)" shadow="var(--red-color)">
                       <SqueezeSpring>{l}</SqueezeSpring>
-                    </Intro.Special>
+                    </Card.Special>
                   )
                 return <SqueezeSpring>{l}</SqueezeSpring>
               })}
@@ -76,33 +80,28 @@ export default function Home() {
             <SqueezeTrail delay={800}>
               {PETER.split('').map((l) => {
                 if (l === ' ') return l
-                if (l === '.')
-                  return (
-                    <Intro.Special color="var(--sky-color)">
-                      <SqueezeSpring>{l}</SqueezeSpring>
-                    </Intro.Special>
-                  )
+
                 if (l === 'H')
                   return (
-                    <Intro.Special size="8rem" color="var(--yellow-color)" shadow="var(--blue-color)">
+                    <Card.Special color="var(--yellow-color)" shadow="var(--blue-color)">
                       <SqueezeSpring>{l}</SqueezeSpring>
-                    </Intro.Special>
+                    </Card.Special>
                   )
                 if (l === 'P')
                   return (
-                    <Intro.Special size="8rem" color="var(--green-color)" shadow="var(--red-color)">
+                    <Card.Special color="var(--green-color)" shadow="var(--red-color)">
                       <SqueezeSpring>{l}</SqueezeSpring>
-                    </Intro.Special>
+                    </Card.Special>
                   )
                 return <SqueezeSpring>{l}</SqueezeSpring>
               })}
             </SqueezeTrail>
           </NoWrap>
-        </Intro.Title>
-        <Intro.Text>
+        </Card.Title>
+        <Card.Text>
           <FadeInSpring delay={1000}>I like to code and build things on the internet.</FadeInSpring>
-        </Intro.Text>
-      </Intro>
+        </Card.Text>
+      </Card>
 
       <Footer>
         <FadeInSpring style={{ width: '100%' }} delay={1400}>
