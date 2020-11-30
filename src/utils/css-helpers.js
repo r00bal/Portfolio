@@ -14,13 +14,13 @@ export const marginProps = css`
 `
 
 export const maxWidth = css`
-  max-width: 1540px;
+  max-width: 1080px;
 `
 
 export const size = {
   smallScreen: 548,
-  mediumScreen: 960,
-  largeScreen: 1140,
+  mediumScreen: 769,
+  largeScreen: 1023,
 }
 
 export const mediaAbove = Object.keys(size).reduce((acc, label) => {

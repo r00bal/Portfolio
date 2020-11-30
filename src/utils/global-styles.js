@@ -43,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     html, body, #___gatsby, #gatsby-focus-wrapper {
     
   width:100%;
-  height:100%;
+  height:auto;
     margin: 0;
     padding: 0;
 }
@@ -51,8 +51,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-size: 16px;
     font-weight: normal;
-    background-color: var(--main14-background-color);
-    font-family: 'Source Code Pro';
+    /* background-color: var(--main14-background-color); */
+    font-family: 'Roboto';
     box-sizing: border-box;
     list-style: none;
     font-size:16px;

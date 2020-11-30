@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { mediaAbove } from '../utils/css-helpers'
-import { Button } from '.'
+import { mediaAbove, marginProps } from '../utils/css-helpers'
+import { ButtonLink } from '.'
 
 const Container = styled.footer`
   height: auto;
@@ -10,45 +10,26 @@ const Container = styled.footer`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
-  //margin: 10% 0 0 0;
-  ${mediaAbove.smallScreen`
-  flex-direction: row;
-  max-width: 800px;
-`}
+  height: 80px;
+  ${marginProps}
 `
 
-const FooterButtonLink = styled(Button)``
-
-const Box = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  max-width: 250px;
-  margin-top: 2rem;
-  ${mediaAbove.smallScreen`
-   margin:0px;
-   
-`}
-`
+const Box = styled.div``
 
 const IconLink = styled.a`
+  height: 30px;
   padding: 1rem;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   cursor: pointer;
   color: inherit;
   ${({ color }) => (color ? `color: ${color};` : `inherit`)}
   &:hover {
     color: #000;
   }
-  ${mediaAbove.smallScreen`
-   font-size: 1rem;
-`}
-  ${mediaAbove.mediumScreen`
-   font-size: 1.5rem;
-`}
+`
+const Text = styled.p`
+  height: 30px;
 `
 
 export default function Footer({ children, ...restProps }) {
@@ -56,7 +37,7 @@ export default function Footer({ children, ...restProps }) {
 }
 
 Footer.ButtonLink = function FooterButton({ children, ...restProps }) {
-  return <FooterButtonLink {...restProps}>{children}</FooterButtonLink>
+  return <ButtonLink {...restProps}>{children}</ButtonLink>
 }
 
 Footer.IconLink = function FooterIconLink({ children, ...restProps }) {
@@ -65,4 +46,7 @@ Footer.IconLink = function FooterIconLink({ children, ...restProps }) {
 
 Footer.Box = function FooterBox({ children, ...restProps }) {
   return <Box {...restProps}>{children}</Box>
+}
+Footer.Text = function FooterText({ children, ...restProps }) {
+  return <Text {...restProps}>{children}</Text>
 }

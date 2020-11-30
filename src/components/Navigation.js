@@ -13,37 +13,22 @@ const Container = styled.nav`
 `
 
 const NavLink = styled(Link)`
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   color: var(--black-color);
   text-decoration: none;
   cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 300;
-  &:hover {
-    span {
-      visibility: hidden;
-    }
-    svg {
-      visibility: visible;
-    }
-  }
-  ${mediaAbove.smallScreen`
-  font-size: 1.4rem;
-  `}
+  font-weight: 400;
 `
 
 const List = styled.ul`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   .active {
-    color: var(--sky-color);
+    color: var(--red-color);
   }
-  ${mediaAbove.smallScreen`
-    justify-content: center;
-  `}
   ${mediaAbove.mediumScreen`
   
     justify-content: flex-end;
@@ -52,30 +37,9 @@ const List = styled.ul`
 
 const Item = styled.li`
   position: relative;
-  svg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    color: var(--sky-color);
-  }
+  margin-left: 30px;
   .active {
-    span {
-      visibility: hidden;
-    }
-    svg {
-      visibility: visible;
-    }
   }
-  ${mediaAbove.smallScreen`
-    margin-left: 30px;
-  `}
 `
 
 const Text = styled.span``

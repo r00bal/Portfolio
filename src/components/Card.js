@@ -1,52 +1,50 @@
 import React, { useContext, createContext } from 'react'
 import styled from 'styled-components'
-import { mediaAbove } from '../utils/css-helpers'
+import { mediaAbove, marginProps } from '../utils/css-helpers'
+
+// font-size: ${({ introMode }) => (introMode ? `1.4rem` : `1.4rem`)};
 
 const Container = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  ${marginProps}
 `
 
 const Text = styled.p`
-  font-size: 1.4rem;
-  font-weight: 200;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 400;
   margin: 20px 0;
-  ${mediaAbove.smallScreen`
-  font-size: ${({ introMode }) => (introMode ? `3.4rem` : `1.4rem`)};
- 
-`}
-
-  ${mediaAbove.mediumScreen`
-  font-size: ${({ introMode }) => (introMode ? `4.4rem` : `1.8rem`)};
-  margin: 50px 0 0 20px;
-`}
+  ${({ textAlign }) => (textAlign ? `text-align: ${textAlign};` : null)}
+  ${marginProps}
 `
 
-const Title = styled.h2`
-  font-size: ${({ introMode }) => (introMode ? `3.4rem` : `1.4rem`)};
-  font-weight: 700;
-  letter-spacing: 0;
-  max-width: 100%;
-
-  text-align: left;
-  transition: all 0.2s;
-  ${mediaAbove.smallScreen`
-  
-  font-size: ${({ introMode }) => (introMode ? `4.4rem` : `2.2rem`)};
+const Title = styled.h1`
+  line-height: 2rem;
   max-width: 800px;
-  
-`}
-  ${mediaAbove.mediumScreen`
-  font-size: ${({ introMode }) => (introMode ? `10.4rem` : `3rem`)};
-  max-width: 100%;
-  
-`}
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  transition: all 0.2s;
+  ${({ textAlign }) => (textAlign ? `text-align: ${textAlign};` : null)}
+  ${marginProps}
+`
+
+const Subtitle = styled.h2`
+  line-height: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: all 0.2s;
+  ${({ textAlign }) => (textAlign ? `text-align: ${textAlign};` : null)}
+  ${marginProps}
 `
 
 const Special = styled.span`
-  font-size: ${({ introMode }) => (introMode ? `6rem` : `2.2rem`)};
   ${({ color }) => (color ? `color: ${color};` : null)}
   ${({ shadow }) => (shadow ? `text-shadow: 3px 3px ${shadow};` : null)}
   transition: all 0.2s;
@@ -54,20 +52,6 @@ const Special = styled.span`
     ${({ color, shadow }) => (color && shadow ? `text-shadow: 3px 3px ${color};` : null)}
     ${({ shadow, color }) => (shadow && color ? `color: ${shadow};` : null)}
   }
-  ${mediaAbove.smallScreen`
-   ${({ shadow }) => (shadow ? `text-shadow: 5px 5px ${shadow};` : null)}
-   font-size: ${({ introMode }) => (introMode ? `8rem` : `3rem`)};
-     &:hover {
-    ${({ color, shadow }) => (color && shadow ? `text-shadow: 5px 5px ${color};` : null)}
-   
-  `}
-  ${mediaAbove.mediumScreen`
-   ${({ shadow }) => (shadow ? `text-shadow: 7px 7px ${shadow};` : null)}
-   font-size: ${({ introMode }) => (introMode ? `14rem` : `3.8rem`)};
-     &:hover {
-    ${({ color, shadow }) => (color && shadow ? `text-shadow: 7px 7px ${color};` : null)}
-   
-  `}
 `
 
 export const IntroContext = createContext()
@@ -104,5 +88,14 @@ Card.Title = function CardTitle({ children, ...restProps }) {
     <Title introMode={introMode} {...restProps}>
       {children}
     </Title>
+  )
+}
+
+Card.Subtitle = function CardSubtitle({ children, ...restProps }) {
+  const { introMode } = useContext(IntroContext)
+  return (
+    <Subtitle introMode={introMode} {...restProps}>
+      {children}
+    </Subtitle>
   )
 }
