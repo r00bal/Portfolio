@@ -1,10 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
-import { SqueezeSpring } from '../animations'
-import { Nav, Header } from '../components'
-import { flexProps, mediaAbove, maxWidth } from '../utils/css-helpers'
-import { GlobalStyle } from '../utils/global-styles'
+import { Footer, Header, Nav } from '../components'
+
+import { maxWidth, mediaAbove } from '../utils/css-helpers'
 import '../utils/font-awesome'
+import { GlobalStyle } from '../utils/global-styles'
 
 const Main = styled.main`
   height: calc(100% - calc(100px + 16px + 16px));
@@ -25,7 +26,7 @@ const Main = styled.main`
   padding: 1rem 3rem 1rem 3rem;
 `}
 `
-const Layout = ({ children }) => (
+const Layout = ({ children, siteAuthor = 'Panda' }) => (
   <>
     <GlobalStyle />
     <Header>
@@ -53,6 +54,26 @@ const Layout = ({ children }) => (
       </Header.Wrapper>
     </Header>
     <Main>{children}</Main>
+    <Footer margin="100px 0 0 0">
+      <Footer.Text>frontendpit@gmail.com</Footer.Text>
+      <Footer.Text>
+        © {new Date().getFullYear()}, Website by {siteAuthor}
+      </Footer.Text>
+      <Footer.Box>
+        <Footer.IconLink href="#" color="var(--white-color)" hoverColor="var(--green-color)">
+          <FontAwesomeIcon size="2x" icon={['fab', 'github']} title="github account for Peter" />
+        </Footer.IconLink>
+        <Footer.IconLink href="#" color="var(--white-color)" hoverColor="var(--green-color)">
+          <FontAwesomeIcon size="2x" icon={['fab', 'codepen']} title="codepen account for Peter" />
+        </Footer.IconLink>
+        <Footer.IconLink href="#" color="var(--white-color)" hoverColor="var(--green-color)">
+          <FontAwesomeIcon size="2x" icon={['fab', 'linkedin']} title="linkedin account for Peter" />
+        </Footer.IconLink>
+        <Footer.IconLink href="#" color="var(--white-color)" hoverColor="var(--green-color)">
+          <FontAwesomeIcon size="2x" icon="paper-plane" />
+        </Footer.IconLink>
+      </Footer.Box>
+    </Footer>
   </>
 )
 

@@ -1,6 +1,6 @@
 import React, { useContext, createContext } from 'react'
 import styled from 'styled-components'
-import { mediaAbove, marginProps } from '../utils/css-helpers'
+import { textAlignProps, marginProps, colorProps, maxWidth } from '../utils/css-helpers'
 
 // font-size: ${({ introMode }) => (introMode ? `1.4rem` : `1.4rem`)};
 
@@ -10,6 +10,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   ${marginProps}
+  max-width:1000px;
 `
 
 const Text = styled.p`
@@ -17,8 +18,9 @@ const Text = styled.p`
   line-height: 2rem;
   font-weight: 400;
   margin: 20px 0;
-  ${({ textAlign }) => (textAlign ? `text-align: ${textAlign};` : null)}
+
   ${marginProps}
+  ${textAlignProps}
 `
 
 const Title = styled.h1`
@@ -30,18 +32,20 @@ const Title = styled.h1`
   line-height: 1.2;
   text-align: center;
   transition: all 0.2s;
-  ${({ textAlign }) => (textAlign ? `text-align: ${textAlign};` : null)}
+  ${textAlignProps}
   ${marginProps}
 `
 
 const Subtitle = styled.h2`
   line-height: 2rem;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 1.25rem;
+  color: var(--blue-color);
+  font-weight: 600;
+  line-height: 1.5;
   transition: all 0.2s;
-  ${({ textAlign }) => (textAlign ? `text-align: ${textAlign};` : null)}
   ${marginProps}
+  ${textAlignProps}
+  ${colorProps}
 `
 
 const Special = styled.span`

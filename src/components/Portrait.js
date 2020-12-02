@@ -47,9 +47,8 @@ const Container = styled.div`
   }
 `
 
-const EYES_WIDTH_AREA_PX = 23
-const EYES_HEIGHT_AREA_PX = 4
-
+const EYES_WIDTH_AREA_PX = 24
+const EYES_HEIGHT_AREA_PX = 6
 const calc = (x, y) => [
   Math.floor((x / (window.innerWidth * 2)) * EYES_WIDTH_AREA_PX),
   Math.floor((y / window.innerHeight) * EYES_HEIGHT_AREA_PX),

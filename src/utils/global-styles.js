@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
  :root {
-  
+  --main15-background-color:#E5E5E5;
   --main4-background-color: #D9E4FC;
   
   --main2-background-color: #FDF0E5;
@@ -51,11 +51,14 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-size: 16px;
     font-weight: normal;
-    /* background-color: var(--main14-background-color); */
-    font-family: 'Roboto';
+    /* background-color: var(--main-background-color); */
+    font-family: 'Open Sans';
     box-sizing: border-box;
     list-style: none;
     font-size:16px;
+    line-height: 1.25;
+    font-weight:400;
+    letter-spacing: .02rem;
   }
 
 

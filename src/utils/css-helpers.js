@@ -9,12 +9,29 @@ export const flexProps = css`
   ${({ alignContent }) => (alignContent ? `align-content: ${alignContent};` : null)}
 `
 
+export const textAlignProps = css`
+  ${({ textAlign }) => (textAlign ? `text-align: ${textAlign};` : null)}
+`
 export const marginProps = css`
   ${({ margin }) => (margin ? `margin: ${margin};` : null)}
 `
 
+export const colorProps = css`
+  ${({ color }) => (color ? `color: ${color};` : `inherit`)}
+`
+
+export const hoverProps = css`
+  ${({ hoverColor }) =>
+    hoverColor
+      ? `
+    &:hover { 
+    color: ${hoverColor}; 
+    }`
+      : null}
+`
+
 export const maxWidth = css`
-  max-width: 1080px;
+  max-width: 80rem;
 `
 
 export const size = {

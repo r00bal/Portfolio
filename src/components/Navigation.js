@@ -14,10 +14,10 @@ const Container = styled.nav`
 
 const NavLink = styled(Link)`
   font-size: 1.2rem;
-  color: var(--black-color);
+  color: var(--green-color);
   text-decoration: none;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 500;
 `
 
 const List = styled.ul`
@@ -27,7 +27,7 @@ const List = styled.ul`
   justify-content: flex-end;
   align-items: center;
   .active {
-    color: var(--red-color);
+    color: var(--yellow-color);
   }
   ${mediaAbove.mediumScreen`
   

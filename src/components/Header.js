@@ -6,6 +6,7 @@ const Container = styled.header`
   position: relative;
   top: 0;
   z-index: 4;
+  background-color: var(--blue-color);
   // border-bottom: 1px solid black;
   // background-color: var(--green-color);
   // background-color: var(--white-color);
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100px;
+  height: 150px;
   ${mediaAbove.mediumScreen`
  justify-content: space-between;
 `}
@@ -40,23 +41,27 @@ const HeaderTitle = styled.h1`
 `}
 `
 
-const HeaderLogo = styled.div`
+const Logo = styled.div`
   display: block;
-  border: 2px solid black;
-  font-size: 2.5rem;
+  border: 2px solid var(--yellow-color);
+  //background-color: var(--white-color);
+  color: var(--green-color);
+  font-size: 3rem;
   padding: 5px;
-  font-weight: 500;
+  font-weight: 900;
+  transition: 0.2s all;
+  transform-origin: top left;
   &:hover {
-    background-color: var(--main-background);
+    transform: rotate(15deg);
   }
-  span:first-child {
+  /* span:first-child {
     color: var(--green-color);
-    text-shadow: 3px 2px 0 var(--red-color);
+    text-shadow: 2px 2px 0 var(--red-color);
   }
   span:last-child {
     color: var(--yellow-color);
-    text-shadow: 3px 2px 0 var(--blue-color);
-  }
+    text-shadow: 2px 2px 0 var(--sky-color);
+  } */
 `
 
 export default function Header({ children, ...restProps }) {
@@ -71,6 +76,6 @@ Header.Title = function Title({ children, ...restProps }) {
   return <HeaderTitle {...restProps}>{children}</HeaderTitle>
 }
 
-Header.Logo = function Logo({ children, ...restProps }) {
-  return <HeaderLogo {...restProps}>{children}</HeaderLogo>
+Header.Logo = function HeaderLogo({ children, ...restProps }) {
+  return <Logo {...restProps}>{children}</Logo>
 }

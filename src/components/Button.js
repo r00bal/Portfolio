@@ -5,8 +5,8 @@ const ButtonLink = styled.a`
   color: var(--blue-color);
   text-decoration: none;
   text-align: center;
-  padding: 0.375rem 1rem;
-  font-size: 1.2rem;
+  padding: 0.675rem 1.275rem;
+  font-size: 1rem;
   line-height: 1.5;
   font-weight: 100;
   min-width: 250px;
@@ -15,7 +15,7 @@ const ButtonLink = styled.a`
   cursor: pointer;
   display: block;
   &:hover {
-    color: #fff;
+    color: var(--yellow-color);
     border: 1px solid var(--blue-color);
     background: var(--blue-color);
   }
