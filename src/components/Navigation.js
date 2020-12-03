@@ -14,10 +14,14 @@ const Container = styled.nav`
 
 const NavLink = styled(Link)`
   font-size: 1.2rem;
-  color: var(--green-color);
   text-decoration: none;
   cursor: pointer;
   font-weight: 500;
+  color: var(--green-color);
+  transition: 1s all;
+  &:hover {
+    color: var(--yellow-color);
+  }
 `
 
 const List = styled.ul`
@@ -38,8 +42,6 @@ const List = styled.ul`
 const Item = styled.li`
   position: relative;
   margin-left: 30px;
-  .active {
-  }
 `
 
 const Text = styled.span``

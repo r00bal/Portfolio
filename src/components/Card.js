@@ -4,7 +4,7 @@ import { textAlignProps, marginProps, colorProps, maxWidth } from '../utils/css-
 
 // font-size: ${({ introMode }) => (introMode ? `1.4rem` : `1.4rem`)};
 
-const Container = styled.div`
+const Container = styled.section`
   height: auto;
   display: flex;
   flex-direction: column;

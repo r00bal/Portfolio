@@ -54,7 +54,7 @@ const IconLink = styled.a`
 `
 const Text = styled.p`
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 200;
 `
 
 export default function Footer({ children, ...restProps }) {

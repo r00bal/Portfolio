@@ -7,13 +7,18 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     `gatsby-plugin-fontawesome-css`,
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Source Code Pro:200,500,700,900', 'Open Sans:,100,200,500,700,900'],
+          families: ['Source Code Pro:200,500,700,900', 'Open Sans:,100,200,300,500,700,900'],
         },
       },
     },

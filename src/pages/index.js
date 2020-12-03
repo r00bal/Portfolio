@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import styled from 'styled-components'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Layout } from '../layouts'
 import { Card, Footer, Portrait, ButtonLink } from '../components'
@@ -19,7 +19,7 @@ export default function Home() {
         // onMouseMove={onMove}
       >
         <FadeInSpring style={{ width: '100%' }} delay={200}>
-          <Card.Title textAlign="center">Hello, my name is Piotr. I am Front-end developer from Gdynia, PL.</Card.Title>
+          <Card.Title textAlign="center">Hello, my name is Piotr. I like to build things in the Interent.</Card.Title>
         </FadeInSpring>
 
         <Portrait mouse={{ x, y }} />
@@ -28,8 +28,8 @@ export default function Home() {
           <Card.Text margin="20px 0 0 0">
             Hi. I am Pit, and this is a concise story of my life. At the beginning of my career, I was doing numerous
             jobs for a living, figuring out what I should do with the rest of my life. A few years ago, I was introduced
-            to programming. Immediately I knew that this is what I was looking for, so I jumped deep into it. One day I
-            decided to turn my passion into a profession.
+            to programming. Immediately I knew that this is what I was looking for, so I jumped deeply into it. One day
+            I decided to turn my passion into a profession.
           </Card.Text>
           <Card.Subtitle margin="1.5rem 0">Experience</Card.Subtitle>
           <Card.Text margin="20px 0 0 0">
