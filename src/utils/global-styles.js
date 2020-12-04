@@ -23,10 +23,11 @@ export const GlobalStyle = createGlobalStyle`
     --black-color: #000000;
     --white-color: #ffffff;
     --green-color: #00FFC0;
-    --blue-color: #6A61F0;
+    --blue-color: #6A61F0;//#5E21D8; //
     --sky-color: #54B8FA;
     --yellow-color: #EAFF00;
     --red-color: #FF0054;
+    --brown-color: #E5D2B9;
 
     /* --black-color: #000000;
     --white-color: #ffffff;
@@ -43,7 +44,7 @@ export const GlobalStyle = createGlobalStyle`
     html, body, #___gatsby, #gatsby-focus-wrapper {
     
   width:100%;
-  height:auto;
+  height:100%;
     margin: 0;
     padding: 0;
 }

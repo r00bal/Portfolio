@@ -2,9 +2,9 @@ import React from 'react'
 import { Layout } from '../layouts'
 import { Gallery } from '../components'
 
-export default function Projects() {
+export default function Projects({ location }) {
   return (
-    <Layout>
+    <Layout location={location}>
       <Gallery.Title>Projects</Gallery.Title>
       <Gallery>
         <Gallery.ItemWrapper

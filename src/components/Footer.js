@@ -8,8 +8,8 @@ const Container = styled.footer`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 200px;
-  background-color: var(--black-color);
+  height: 150px;
+  //background-color: var(--black-color);
   color: var(--white-color);
   ${marginProps}
 `
@@ -36,6 +36,7 @@ const Wrapper = styled.div`
 `
 
 const Box = styled.div`
+  height: fit-content;
   width: fit-content;
   ${maxWidth};
   display: flex;
@@ -47,7 +48,7 @@ const Box = styled.div`
 const IconLink = styled.a`
   padding: 1rem;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   cursor: pointer;
   ${colorProps}
   ${hoverProps}

@@ -3,10 +3,9 @@ import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
 
 const Container = styled.div`
-  margin: 0 auto;
-  max-width: 420px;
+  max-width: 800px;
   height: 100%;
-  width: 100%;
+  width: 800px;
   svg {
     margin: 0 auto;
     height: 100%;

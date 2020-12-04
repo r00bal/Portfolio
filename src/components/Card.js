@@ -6,6 +6,7 @@ import { textAlignProps, marginProps, colorProps, maxWidth } from '../utils/css-
 
 const Container = styled.section`
   height: auto;
+  flex-shrink: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -16,7 +17,7 @@ const Container = styled.section`
 const Text = styled.p`
   font-size: 1rem;
   line-height: 2rem;
-  font-weight: 400;
+  font-weight: 300;
   margin: 20px 0;
 
   ${marginProps}

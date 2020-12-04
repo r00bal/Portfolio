@@ -31,7 +31,7 @@ export const hoverProps = css`
 `
 
 export const maxWidth = css`
-  max-width: 80rem;
+  max-width: 100rem;
 `
 
 export const size = {

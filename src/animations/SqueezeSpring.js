@@ -9,7 +9,7 @@ const SqueezeSpring = ({ children }) => {
     to: { x: 1, y: 1, color: 'black' },
     config: { mass: 3, tension: 300, friction: 5 },
     reset: state,
-    onStart: (state) => toggle(false),
+    onRest: (state) => toggle(false),
   })
 
   return (

@@ -6,7 +6,6 @@ import { mediaAbove } from '../utils/css-helpers'
 const Container = styled.nav`
   display: flex;
   width: 100%;
-
   ${mediaAbove.smallScreen`
   width:fit-content;
   `}
@@ -16,11 +15,11 @@ const NavLink = styled(Link)`
   font-size: 1.2rem;
   text-decoration: none;
   cursor: pointer;
-  font-weight: 500;
-  color: var(--green-color);
-  transition: 1s all;
+  font-weight: 600;
+  //padding: 30px 15px;
+  color: var(--blue-color);
   &:hover {
-    color: var(--yellow-color);
+    color: var(--green-color);
   }
 `
 
@@ -31,7 +30,7 @@ const List = styled.ul`
   justify-content: flex-end;
   align-items: center;
   .active {
-    color: var(--yellow-color);
+    color: var(--green-color);
   }
   ${mediaAbove.mediumScreen`
   
