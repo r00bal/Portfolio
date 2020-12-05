@@ -4,21 +4,25 @@ import { mediaAbove, marginProps, maxWidth, colorProps, hoverProps, textAlignPro
 import { ButtonLink } from '.'
 
 const Container = styled.footer`
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 150px;
+  height: 400px;
   //background-color: var(--black-color);
   color: var(--white-color);
   ${marginProps}
+  ${mediaAbove.mediumScreen`
+  height: 250px;
+`}
 `
 
 const Wrapper = styled.div`
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem;
   margin: 0 auto;
+  height: 90%;
   width: 100%;
   ${maxWidth};
   display: flex;
@@ -39,16 +43,22 @@ const FooterButton = styled(ButtonLink)``
 
 const Box = styled.div`
   height: 100%;
-  width: 40%;
-  ${maxWidth};
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  ${mediaAbove.mediumScreen`
+ flex-direction: row;
+min-width:450px;
+max-width:600px;
+`}
 `
 
 const IconWrapper = styled.div`
   z-index: 100;
+  display: block;
+  width: 230px;
 `
 
 const IconLink = styled.a`
@@ -68,13 +78,15 @@ const Text = styled.p`
 const Subtitle = styled.h3`
   color: var(--black-color);
   line-height: 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.5;
   transition: all 0.2s;
-  ${marginProps}
-  ${textAlignProps}
-  ${colorProps}
+  text-align: center;
+  ${mediaAbove.mediumScreen`
+ font-size: 2rem;
+ text-align: left;
+`}
 `
 
 export default function Footer({ children, ...restProps }) {

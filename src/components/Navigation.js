@@ -27,15 +27,11 @@ const List = styled.ul`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start
   align-items: center;
   .active {
     color: var(--green-color);
   }
-  ${mediaAbove.mediumScreen`
-  
-    justify-content: flex-end;
-  `}
 `
 
 const Item = styled.li`

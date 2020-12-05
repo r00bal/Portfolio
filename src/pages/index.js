@@ -65,7 +65,7 @@ export default function Home({ location }) {
         <Intro.Text>
           <FadeInSpring delay={1000}>I like to build things on the internet.</FadeInSpring>
         </Intro.Text>
-        <FadeInSpring style={{ alignSelf: 'flex-end' }} delay={1000}>
+        <FadeInSpring style={{ alignSelf: 'flex-end', marginTop: '1rem ' }} delay={1000}>
           <SocialIcons />
         </FadeInSpring>
       </Intro>

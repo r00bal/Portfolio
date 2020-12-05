@@ -1,39 +1,45 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { Layout } from '../layouts'
-import { Card, Portrait, ButtonLink, Intro } from '../components'
+import { Card, Portrait, Intro } from '../components'
 import { FadeInSpring, SqueezeSpring, SqueezeTrail } from '../animations'
-import { useMousePosition } from '../hooks'
+import { mediaAbove } from '../utils/css-helpers'
 
 const Container = styled.div`
   width: 100%;
-  //max-width: 800px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ${mediaAbove.mediumScreen`
+   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-start;
+  `}
+  ${mediaAbove.largeScreen`
+   flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  `}
 `
-
-const PortraitContainer = styled.div``
 
 export default function Home({ location }) {
   return (
     <Layout location={location}>
-      <Container
-      // css={`
-      //   height: calc(100vh - 300px);
-      // `}
-      >
+      <Container>
         <Portrait />
         <Card
           css={`
-            margin-right: 10%;
             max-width: 400px;
+            ${mediaAbove.largeScreen`
+   margin-right: 10%;
+  `}
           `}
         >
           <Intro.Title
             css={`
-              width: fit-content;
+              width: 100%;
+              text-align: left;
             `}
           >
             <SqueezeTrail delay={200}>
@@ -47,11 +53,12 @@ export default function Home({ location }) {
           </Intro.Title>
           <FadeInSpring delay={500}>
             <Card.Text margin="20px 0 0 0">
-              I'am Pit and I'm learning to code. I am a big fun of frontend develompment but I like to make my hands
-              dirty also on the backend side. I have done several projects with technologies such as React, GraphQL,
-              NodeJS. Currently, I am working as an HTML email developer. I'm using HTML, CSS, Javascript in my everyday
-              work. See my full work history on LinkedIn. Evryday I am sharpening my programming skills to become a full
-              stack ninja developer. You can check some of my Projects here or visit my GitHub and Codepen profiles.
+              I'm Pit. I learn to code. I am a big fan of frontend development, but I like to make my hands dirty also
+              on the backend side. I have done several projects with technologies such as React, GraphQL, NodeJS.
+              Currently, I am working as an HTML email developer. I'm using HTML, CSS, Javascript in my everyday work.
+              See my full work history on LinkedIn. I am coding every day, trying to sharpening my programming skills to
+              become a full-stack ninja developer ;) You can check some of my Projects here or visit my GitHub and
+              Codepen profiles.
               {/* Hi. I am Pit, and this will be a concise story. A few years ago, I started to learn to code, and I liked
               it a lot. Currently, I am working as an HTML email developer. I'm using HTML, CSS, Javascript in my
               everyday work. See my full work history on LinkedIn. I am still sharpening my programming skills. I have

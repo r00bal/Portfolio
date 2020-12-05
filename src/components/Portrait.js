@@ -1,9 +1,19 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
-import { mediaAbove, marginProps, maxWidth, colorProps, hoverProps, textAlignProps } from '../utils/css-helpers'
+import { mediaAbove } from '../utils/css-helpers'
 
 export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 0;
+  ${mediaAbove.mediumScreen`
+ 
+  `}
+  ${mediaAbove.largeScreen`
+  
   top: 0;
   left: 0;
   bottom: 0;
@@ -11,11 +21,7 @@ export const Container = styled.div`
   position: absolute;
   margin-top: 10%;
   padding-left: 10%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  z-index: 0;
+  `}
 
   svg {
     max-width: 800px;

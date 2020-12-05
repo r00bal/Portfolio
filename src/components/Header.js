@@ -8,9 +8,6 @@ const Container = styled.header`
   z-index: 4;
   //background-color: var(--blue-color);
   // border-bottom: 1px solid black;
-  // background-color: var(--green-color);
-  // background-color: var(--white-color);
-  // background-color: var(--main14-background-color);
 `
 
 const Wrapper = styled.div`
@@ -21,6 +18,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   height: 150px;
   ${mediaAbove.mediumScreen`
  justify-content: space-between;

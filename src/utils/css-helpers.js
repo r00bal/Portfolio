@@ -36,8 +36,8 @@ export const maxWidth = css`
 
 export const size = {
   smallScreen: 548,
-  mediumScreen: 769,
-  largeScreen: 1023,
+  mediumScreen: 960,
+  largeScreen: 1400,
 }
 
 export const mediaAbove = Object.keys(size).reduce((acc, label) => {
