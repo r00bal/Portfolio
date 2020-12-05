@@ -6,7 +6,6 @@ import { textAlignProps, marginProps, colorProps, maxWidth } from '../utils/css-
 
 const Container = styled.section`
   height: auto;
-  flex-shrink: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

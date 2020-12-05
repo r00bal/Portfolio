@@ -1,50 +1,74 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { Layout } from '../layouts'
-import { Card, Portrait, ButtonLink } from '../components'
-import { FadeInSpring } from '../animations'
+import { Card, Portrait, ButtonLink, Intro } from '../components'
+import { FadeInSpring, SqueezeSpring, SqueezeTrail } from '../animations'
 import { useMousePosition } from '../hooks'
 
 const Container = styled.div`
+  width: 100%;
+  //max-width: 800px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: flex-start;
 `
 
+const PortraitContainer = styled.div``
+
 export default function Home({ location }) {
-  const { x, y } = useMousePosition()
-  // const [{ x, y }, set] = useState({ x: 1, y: 1 })
-  // const onMove = ({ clientX: x, clientY: y }) => set({ x, y })
   return (
     <Layout location={location}>
-      <Container>
+      <Container
+      // css={`
+      //   height: calc(100vh - 300px);
+      // `}
+      >
+        <Portrait />
         <Card
           css={`
-            width: 30%;
+            margin-right: 10%;
+            max-width: 400px;
           `}
         >
+          <Intro.Title
+            css={`
+              width: fit-content;
+            `}
+          >
+            <SqueezeTrail delay={200}>
+              <SqueezeSpring>
+                <Intro.Special color="var(--green-color)" shadow="var(--blue-color)">
+                  H
+                </Intro.Special>
+              </SqueezeSpring>
+              <SqueezeSpring>i</SqueezeSpring>
+            </SqueezeTrail>
+          </Intro.Title>
           <FadeInSpring delay={500}>
             <Card.Text margin="20px 0 0 0">
-              Hi. I am Pit, and this will be a concise story. A few years ago, I started to learn to code, and I liked
+              I'am Pit and I'm learning to code. I am a big fun of frontend develompment but I like to make my hands
+              dirty also on the backend side. I have done several projects with technologies such as React, GraphQL,
+              NodeJS. Currently, I am working as an HTML email developer. I'm using HTML, CSS, Javascript in my everyday
+              work. See my full work history on LinkedIn. Evryday I am sharpening my programming skills to become a full
+              stack ninja developer. You can check some of my Projects here or visit my GitHub and Codepen profiles.
+              {/* Hi. I am Pit, and this will be a concise story. A few years ago, I started to learn to code, and I liked
               it a lot. Currently, I am working as an HTML email developer. I'm using HTML, CSS, Javascript in my
               everyday work. See my full work history on LinkedIn. I am still sharpening my programming skills. I have
               written many code lines by building my own applications and enrolling in education platforms such as
               FreeCodeCamp, FrontEndMasters, and CodeCademy. I like to make my hands dirty in both frontend and backend
               technologies. I have done several projects with technologies such as React, GraphQL, NodeJS. You can check
               some of my Projects here or visit my GitHub and Codepen profiles. Among other things, I enjoy funk music,
-              surfing, and cooking.
+              surfing, and cooking. */}
             </Card.Text>
           </FadeInSpring>
-        </Card>{' '}
-        <Portrait mouse={{ x, y }} style={{ alignSelf: 'flex-end' }} />
-      </Container>
-
-      <Card
-      // onMouseMove={onMove}
-      >
-        {/* <FadeInSpring style={{ width: '100%' }} delay={200}>
+        </Card>
+      </Container>{' '}
+      <Container />
+      {/* <Card>
+        <FadeInSpring style={{ width: '100%' }} delay={200}>
           <Card.Title textAlign="center">Hello, my name is Piotr. I like to build things in the Interent.</Card.Title>
-        </FadeInSpring> */}
+        </FadeInSpring>
 
         <FadeInSpring delay={500}>
           <Card.Subtitle margin="1.5rem 0">About me</Card.Subtitle>
@@ -77,7 +101,7 @@ export default function Home({ location }) {
             Interested in doing a project together ?
           </Card.Subtitle>
         </FadeInSpring>
-      </Card>
+      </Card> */}
       {/* <Card introMode margin="3% 0 0 0">
         <Card.Title hoverColor="var(--green-color)">
           {IMTRO_TEXT.map((word, index) => {
@@ -100,7 +124,6 @@ export default function Home({ location }) {
           <FadeInSpring delay={1000}>I like to code and build things on the internet.</FadeInSpring>
         </Card.Text>
       </Card> */}
-      <ButtonLink>Contact Me</ButtonLink>
     </Layout>
   )
 }

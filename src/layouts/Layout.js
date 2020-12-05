@@ -1,21 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
-import { Footer, Header, Nav } from '../components'
-import panda from '../assets/download.png'
+import { ButtonLink, Footer, Header, Nav } from '../components'
 
 import { maxWidth, mediaAbove } from '../utils/css-helpers'
 import '../utils/font-awesome'
 import { GlobalStyle } from '../utils/global-styles'
+import SocialIcons from './SocialIcons'
 
 const Main = styled.main`
-  min-height: calc(100% - 300px);
+  min-height: calc(100% - 350px);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-content: space-around;
   align-items: center;
+  box-sizing: border-box;
 
   ${maxWidth}
   margin: 0 auto;
@@ -35,9 +36,9 @@ const Layout = ({ children, siteAuthor = 'Panda', location }) => (
         <Nav>
           <Nav.List>
             <Nav.Item>
-              {/* <Nav.Link activeClassName="active" to="/">
-                <Nav.Text>Home</Nav.Text>
-              </Nav.Link> */}
+              <Nav.Link activeClassName="active" to="/">
+                <Nav.Text>Start</Nav.Text>
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link activeClassName="active" to="/about">
@@ -53,27 +54,17 @@ const Layout = ({ children, siteAuthor = 'Panda', location }) => (
         </Nav>
       </Header.Wrapper>
     </Header>
-    <Main>{children}</Main>
+    <Main IndexPage={location.pathname !== '/'}>{children}</Main>
     {location.pathname !== '/' ? (
       <Footer>
-        <Footer.Text>frontendpit@gmail.com</Footer.Text>
-        <Footer.Text>
-          © {new Date().getFullYear()}, Website by {siteAuthor}
-        </Footer.Text>
-        <Footer.Box>
-          <Footer.IconLink href="#" color="var(--white-color)" hoverColor="var(--green-color)">
-            <FontAwesomeIcon size="2x" icon={['fab', 'github']} title="github account for Peter" />
-          </Footer.IconLink>
-          <Footer.IconLink href="#" color="var(--white-color)" hoverColor="var(--green-color)">
-            <FontAwesomeIcon size="2x" icon={['fab', 'codepen']} title="codepen account for Peter" />
-          </Footer.IconLink>
-          <Footer.IconLink href="#" color="var(--white-color)" hoverColor="var(--green-color)">
-            <FontAwesomeIcon size="2x" icon={['fab', 'linkedin']} title="linkedin account for Peter" />
-          </Footer.IconLink>
-          <Footer.IconLink href="#" color="var(--white-color)" hoverColor="var(--green-color)">
-            <FontAwesomeIcon size="2x" icon="paper-plane" />
-          </Footer.IconLink>
-        </Footer.Box>
+        <Footer.Wrapper>
+          <Footer.Subtitle>Interested in doing a project together ?</Footer.Subtitle>
+          <Footer.Box>
+            <Footer.Button>Contact Me</Footer.Button>
+            <SocialIcons color="var(--black-color)" />
+          </Footer.Box>
+        </Footer.Wrapper>
+        <Footer.Text>Made by Panda</Footer.Text>
       </Footer>
     ) : null}
   </>

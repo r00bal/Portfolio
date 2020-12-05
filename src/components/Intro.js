@@ -42,39 +42,18 @@ const Special = styled.span`
   }
 `
 
-export const IntroContext = createContext()
-
-export default function Intro({ children, introMode = null, ...restProps }) {
-  return (
-    <IntroContext.Provider value={{ introMode }}>
-      <Container {...restProps}>{children}</Container>
-    </IntroContext.Provider>
-  )
+export default function Intro({ children, ...restProps }) {
+  return <Container {...restProps}>{children}</Container>
 }
 
 Intro.Special = function IntroSpecial({ children, ...restProps }) {
-  const { introMode } = useContext(IntroContext)
-  return (
-    <Special introMode={introMode} {...restProps}>
-      {children}
-    </Special>
-  )
+  return <Special {...restProps}>{children}</Special>
 }
 
 Intro.Text = function IntroText({ children, ...restProps }) {
-  const { introMode } = useContext(IntroContext)
-  return (
-    <Text introMode={introMode} {...restProps}>
-      {children}
-    </Text>
-  )
+  return <Text {...restProps}>{children}</Text>
 }
 
 Intro.Title = function IntroTitle({ children, ...restProps }) {
-  const { introMode } = useContext(IntroContext)
-  return (
-    <Title introMode={introMode} {...restProps}>
-      {children}
-    </Title>
-  )
+  return <Title {...restProps}>{children}</Title>
 }

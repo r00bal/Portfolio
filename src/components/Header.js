@@ -14,7 +14,8 @@ const Container = styled.header`
 `
 
 const Wrapper = styled.div`
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0 auto;
   ${maxWidth};
   display: flex;

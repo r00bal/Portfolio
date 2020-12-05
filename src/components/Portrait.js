@@ -1,13 +1,25 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
+import { mediaAbove, marginProps, maxWidth, colorProps, hoverProps, textAlignProps } from '../utils/css-helpers'
 
-const Container = styled.div`
-  max-width: 800px;
-  height: 100%;
-  width: 800px;
+export const Container = styled.div`
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin-top: 10%;
+  padding-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  z-index: 0;
+
   svg {
-    margin: 0 auto;
+    max-width: 800px;
+    max-height: 800px;
     height: 100%;
     width: 100%;
   }
@@ -54,27 +66,17 @@ const calc = (x, y) => [
 ]
 const trans = (x, y) => `translate(${x},${y} )`
 
-export default function Portrait({ mouse }) {
+export default function Portrait() {
   const [{ xy }, set] = useSpring(() => ({
     xy: [0, 0],
   }))
-
-  useEffect(() => {
-    const { x, y } = mouse
-    set({ xy: calc(x, y) })
-  }, [mouse])
 
   const onMove = useCallback(({ clientX: x, clientY: y }) => set({ xy: calc(x, y) }), [])
 
   return (
     <>
-      <Container>
-        <svg
-          id="image"
-          viewBox="-50 0 420 420"
-
-          // onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-        >
+      <Container onMouseMove={onMove}>
+        <svg id="image" viewBox="-50 0 420 420" onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
           <animated.g id="rightEye" className="eyes" transform={xy.interpolate(trans)}>
             <circle id="right" className="st0" cx="182.4" cy="116.1" r="5.8" />
             <circle id="rightApple" cx="182.4" cy="116.1" r="2.7" />
