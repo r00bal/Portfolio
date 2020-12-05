@@ -56,7 +56,7 @@ export default function Home({ location }) {
               I'm Pit. I learn to code. I am a big fan of frontend development, but I like to make my hands dirty also
               on the backend side. I have done several projects with technologies such as React, GraphQL, NodeJS.
               Currently, I am working as an HTML email developer. I'm using HTML, CSS, Javascript in my everyday work.
-              See my full work history on LinkedIn. I am coding every day, trying to sharpening my programming skills to
+              See my work history on LinkedIn. I am coding every day, trying to sharpening my programming skills to
               become a full-stack ninja developer ;) You can check some of my Projects here or visit my GitHub and
               Codepen profiles.
               {/* Hi. I am Pit, and this will be a concise story. A few years ago, I started to learn to code, and I liked

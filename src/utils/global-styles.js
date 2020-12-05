@@ -17,13 +17,13 @@ export const GlobalStyle = createGlobalStyle`
   --main12-background-color: #8F98B0;
   --main12-background-color: #F5A18E;
   --main13-background-color: #FBF5D8;
-  --main14-background-color:#E5D2B9;
+  --main14-background-color:#E5D2B9; //rgba(229, 210, 185, 1)
   --main-background-color: #F2EAE4;
   --main9-background-color: #E4EDF2;
     --black-color: #000000;
     --white-color: #ffffff;
-    --green-color: #00FFC0;
-    --blue-color: #6A61F0;//#5E21D8; //
+    --green-color: #00FFC0; // rgba(0, 255, 192, 1)
+    --blue-color: #6A61F0;//#5E21D8; // rgba(106, 97, 240, 1)
     --sky-color: #54B8FA;
     --yellow-color: #EAFF00;
     --red-color: #FF0054;
