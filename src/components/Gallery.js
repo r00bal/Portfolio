@@ -10,15 +10,15 @@ const Container = styled.section`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-flow: row dense;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
+  grid-column-gap: 4rem;
+  grid-row-gap: 4rem;
   ${mediaAbove.mediumScreen`
   grid-template-columns: repeat(8, minmax(0, 1fr));
   
   `}
 
   ${mediaAbove.largeScreen`
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   
   `}
 `
@@ -27,6 +27,7 @@ const ItemLink = styled.a``
 
 const ItemWrapper = styled(animated.div)`
   grid-column-end: span 4;
+
   &:hover {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
   }
@@ -39,11 +40,13 @@ const Item = styled.div`
   background-color: #ffffff;
   color: #10162f;
   padding: 1rem;
-  border-width: 1px;
+  /* border-width: 1px;
   border-color: #10162f;
   border-color: var(--black-color);
+  
+  border-style: solid; */
   border-radius: 2px;
-  border-style: solid;
+  box-shadow: rgba(106, 97, 240, 0.5) 3px 4px 20px;
   position: relative;
   -webkit-transition: 200ms -webkit-transform;
   transition: 200ms transform;
@@ -60,6 +63,8 @@ const Text = styled.p`
   font-weight: 400;
   margin: 20px 0;
 `
+
+const Image = styled.h4``
 
 const Title = styled.h2`
   line-height: 2rem;
@@ -89,14 +94,18 @@ Gallery.Text = function GalleryText({ children, ...restProps }) {
   return <Text {...restProps}>{children}</Text>
 }
 
+Gallery.Image = function GalleryImage({ children, ...restProps }) {
+  return <Image {...restProps}>{children}</Image>
+}
+
 Gallery.Item = function GalleryItem({ children, ...restProps }) {
   return <Item {...restProps}>{children}</Item>
 }
 
-const calc = (x, y) => [-(y - window.innerHeight / 2) / 100, (x - window.innerWidth / 2) / 100, 1.02]
+const calc = (x, y) => [-(y - window.innerHeight / 2) / 60, (x - window.innerWidth / 2) / 60, 1.08]
 const trans = (x, y, s) => `perspective(800px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 Gallery.ItemWrapper = function GalleryItemWrapper({ children, ...restProps }) {
-  const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
+  const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 3, tension: 350, friction: 28 } }))
   return (
     <ItemWrapper
       {...restProps}

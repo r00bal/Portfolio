@@ -6,38 +6,26 @@ const ProjectsDATA = [
   {
     name: 'Netflix Clone',
     tech: 'React, GraphQl. NodeJS',
-    desc: '',
+    icon: 'NETFLIX CLONE',
     span: 8,
   },
   {
     name: 'Liredit Clone',
     tech: 'React, GraphQl. NodeJS',
-    desc: '',
+    icon: 'REDDIT CLONE',
     span: 4,
   },
   {
     name: 'Sick Fits',
     tech: 'React, GraphQl. NodeJS',
-    desc: '',
+    icon: 'SICK FITS SHOP',
     span: 4,
   },
   {
     name: 'Restaurant page',
     tech: 'React, GraphQl. NodeJS',
-    desc: '',
+    icon: 'STREET FOOD',
     span: 8,
-  },
-  {
-    name: 'Yelp Clone',
-    tech: 'React, GraphQl. NodeJS',
-    desc: '',
-    span: 8,
-  },
-  {
-    name: 'Spotify API app',
-    tech: 'React, GraphQl. NodeJS',
-    desc: '',
-    span: 4,
   },
 ]
 
@@ -46,21 +34,21 @@ export default function Projects({ location }) {
     <Layout location={location}>
       <Gallery.Title>Projects</Gallery.Title>
       <Gallery>
-        {ProjectsDATA.map(({ name, tech, span }, index) => {
+        {ProjectsDATA.map(({ name, tech, icon }, index) => {
           const key = `${name}_${index}`
 
           return (
             <Gallery.ItemWrapper
               key={key}
-              span={span}
               // css={`
               //   grid-column-end: span ${({ span }) => span};
               // `}
             >
               <Gallery.ItemLink>
                 <Gallery.Item>
-                  <Gallery.Subtitle>Netflix Clone</Gallery.Subtitle>
-                  <Gallery.Text> React, GraphQl. NodeJS</Gallery.Text>
+                  <Gallery.Image> {icon}</Gallery.Image>
+                  <Gallery.Subtitle>{name}</Gallery.Subtitle>
+                  <Gallery.Text> {tech}</Gallery.Text>
                 </Gallery.Item>
               </Gallery.ItemLink>
             </Gallery.ItemWrapper>
