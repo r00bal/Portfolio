@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { useSpring, animated } from 'react-spring'
+import Img from 'gatsby-image'
 import { mediaAbove } from '../utils/css-helpers'
 
 // font-size: ${({ introMode }) => (introMode ? `1.4rem` : `1.4rem`)};
@@ -26,6 +27,7 @@ const Container = styled.section`
 const ItemLink = styled.a``
 
 const ItemWrapper = styled(animated.div)`
+  position: relative;
   grid-column-end: span 4;
 
   &:hover {
@@ -37,7 +39,7 @@ const ItemWrapper = styled(animated.div)`
 // rgba(106, 97, 240, 1)
 const Item = styled.div`
   //grid-column-end: span 4;
-  background-color: #ffffff;
+  //background-color: #ffffff;
   color: #10162f;
   padding: 1rem;
   /* border-width: 1px;
@@ -45,13 +47,15 @@ const Item = styled.div`
   border-color: var(--black-color);
   
   border-style: solid; */
+
   border-radius: 2px;
   box-shadow: rgba(106, 97, 240, 0.5) 3px 4px 20px;
   position: relative;
   -webkit-transition: 200ms -webkit-transform;
   transition: 200ms transform;
   display: grid;
-  grid-template-rows: repeat(3, max-content) 1fr max-content;
+  /* grid-template-rows: repeat(3, max-content) 1fr max-content; */
+  grid-template-rows: 1fr 3fr 1fr;
 
   //min-height: 11.25rem;
   min-height: 24.5rem;
@@ -63,8 +67,29 @@ const Text = styled.p`
   font-weight: 400;
   margin: 20px 0;
 `
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`
+const Image = styled(Img)``
 
-const Image = styled.h4``
+const Subtitle = styled.h5`
+  font-size: 1rem;
+`
+const Logo = styled.h4`
+  align-self: center;
+  font-size: 5.5rem;
+  height: 6rem;
+  color: var(--green-color);
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+`
 
 const Title = styled.h2`
   line-height: 2rem;
@@ -76,15 +101,15 @@ const Title = styled.h2`
   margin: 0 auto;
 `
 
-const Subtitle = styled.h3`
-  text-align: center;
-  line-height: 2rem;
-  font-size: 1.25rem;
-  color: var(--blue-color);
-  font-weight: 500;
-  line-height: 1.5;
-  transition: all 0.2s;
-`
+// const Subtitle = styled.h3`
+//   text-align: center;
+//   line-height: 2rem;
+//   font-size: 1.25rem;
+//   color: var(--blue-color);
+//   font-weight: 500;
+//   line-height: 1.5;
+//   transition: all 0.2s;
+// `
 
 export default function Gallery({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>
@@ -94,12 +119,16 @@ Gallery.Text = function GalleryText({ children, ...restProps }) {
   return <Text {...restProps}>{children}</Text>
 }
 
-Gallery.Image = function GalleryImage({ children, ...restProps }) {
-  return <Image {...restProps}>{children}</Image>
+Gallery.Subtitle = function GallerySubtitle({ children, ...restProps }) {
+  return <Subtitle {...restProps}>{children}</Subtitle>
 }
 
 Gallery.Item = function GalleryItem({ children, ...restProps }) {
   return <Item {...restProps}>{children}</Item>
+}
+
+Gallery.Logo = function GalleryLogo({ children, ...restProps }) {
+  return <Logo {...restProps}>{children}</Logo>
 }
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 60, (x - window.innerWidth / 2) / 60, 1.08]
@@ -126,6 +155,6 @@ Gallery.Title = function GalleryTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>
 }
 
-Gallery.Subtitle = function GallerySubtitle({ children, ...restProps }) {
-  return <Subtitle {...restProps}>{children}</Subtitle>
+Gallery.Image = function GalleryImage({ children, ...restProps }) {
+  return <Image {...restProps}>{children}</Image>
 }

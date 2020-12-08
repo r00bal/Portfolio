@@ -1,41 +1,58 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import { Layout } from '../layouts'
 import { Gallery } from '../components'
 
 const ProjectsDATA = [
   {
-    name: 'Netflix Clone',
+    logo: 'Netflix',
     tech: 'React, GraphQl. NodeJS',
-    icon: 'NETFLIX CLONE',
+    subtitle: 'NETFLIX CLONE',
     span: 8,
   },
   {
-    name: 'Liredit Clone',
+    logo: 'Liredit Clone',
     tech: 'React, GraphQl. NodeJS',
-    icon: 'REDDIT CLONE',
+    subtitle: 'REDDIT CLONE',
     span: 4,
   },
   {
-    name: 'Sick Fits',
+    logo: 'Sick Fits',
     tech: 'React, GraphQl. NodeJS',
-    icon: 'SICK FITS SHOP',
+    subtitle: 'SICK FITS SHOP',
     span: 4,
   },
   {
-    name: 'Restaurant page',
+    logo: 'Restaurant page',
     tech: 'React, GraphQl. NodeJS',
-    icon: 'STREET FOOD',
+    subtitle: 'STREET FOOD',
     span: 8,
   },
 ]
 
 export default function Projects({ location }) {
+  const { allImageSharp } = useStaticQuery(graphql`
+    query gallery {
+      allImageSharp {
+        edges {
+          node {
+            id
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { edges } = allImageSharp
   return (
     <Layout location={location}>
+      {console.log(edges)}
       <Gallery.Title>Projects</Gallery.Title>
       <Gallery>
-        {ProjectsDATA.map(({ name, tech, icon }, index) => {
-          const key = `${name}_${index}`
+        {ProjectsDATA.map(({ subtitle, tech, logo }, index) => {
+          const key = `${subtitle}_${index}`
 
           return (
             <Gallery.ItemWrapper
@@ -46,8 +63,8 @@ export default function Projects({ location }) {
             >
               <Gallery.ItemLink>
                 <Gallery.Item>
-                  <Gallery.Image> {icon}</Gallery.Image>
-                  <Gallery.Subtitle>{name}</Gallery.Subtitle>
+                  <Gallery.Subtitle>{subtitle}</Gallery.Subtitle>
+                  <Gallery.Logo>{logo}</Gallery.Logo>
                   <Gallery.Text> {tech}</Gallery.Text>
                 </Gallery.Item>
               </Gallery.ItemLink>
