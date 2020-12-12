@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Layout } from '../layouts'
-import { Gallery } from '../components'
+import { Gallery, Intro } from '../components'
 
 const ProjectsDATA = [
   {
@@ -66,6 +66,7 @@ export default function Projects({ location }) {
                   <Gallery.Subtitle>{subtitle}</Gallery.Subtitle>
                   <Gallery.Logo>{logo}</Gallery.Logo>
                   <Gallery.Text> {tech}</Gallery.Text>
+                  {/* <Gallery.Image fluid={edges[index].node.fluid} /> */}
                 </Gallery.Item>
               </Gallery.ItemLink>
             </Gallery.ItemWrapper>

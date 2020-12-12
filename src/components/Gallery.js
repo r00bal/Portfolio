@@ -24,32 +24,21 @@ const Container = styled.section`
   `}
 `
 
-const ItemLink = styled.a``
-
-const ItemWrapper = styled(animated.div)`
-  position: relative;
-  grid-column-end: span 4;
-
-  &:hover {
-    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
-  }
-`
 // rgba(229, 210, 185, 1)
 // rgba(0, 255, 192, 1)
 // rgba(106, 97, 240, 1)
 const Item = styled.div`
+  overflow: hidden;
   //grid-column-end: span 4;
-  //background-color: #ffffff;
+  background-color: var(--white-color);
   color: #10162f;
   padding: 1rem;
   /* border-width: 1px;
   border-color: #10162f;
   border-color: var(--black-color);
-  
   border-style: solid; */
-
   border-radius: 2px;
-  box-shadow: rgba(106, 97, 240, 0.5) 3px 4px 20px;
+  box-shadow: rgba(106, 97, 240, 0.5) 3px 4px 30px;
   position: relative;
   -webkit-transition: 200ms -webkit-transform;
   transition: 200ms transform;
@@ -64,31 +53,32 @@ const Item = styled.div`
 const Text = styled.p`
   font-size: 1rem;
   line-height: 2rem;
-  font-weight: 400;
+  font-weight: 500;
   margin: 20px 0;
+  text-align: right;
 `
 const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 `
-const Image = styled(Img)``
+const Image = styled(Img)`
+  height: 100%;
+`
 
 const Subtitle = styled.h5`
-  font-size: 1rem;
+  font-size: 1.2rem;
 `
 const Logo = styled.h4`
   align-self: center;
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   height: 6rem;
-  color: var(--green-color);
+  color: var(--blue-color);
+  text-shadow: 5px 5px var(--green-color);
   font-weight: 900;
   line-height: 1.2;
   text-align: center;
+  &::first-letter {
+  }
 `
 
 const Title = styled.h2`
@@ -99,6 +89,20 @@ const Title = styled.h2`
   text-align: center;
   padding: 100px 0;
   margin: 0 auto;
+`
+
+const ItemLink = styled.a``
+
+const ItemWrapper = styled(animated.div)`
+  position: relative;
+  grid-column-end: span 4;
+
+  &:hover {
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    ${ImageWrapper} {
+      top: 0;
+    }
+  }
 `
 
 // const Subtitle = styled.h3`
@@ -156,5 +160,9 @@ Gallery.Title = function GalleryTitle({ children, ...restProps }) {
 }
 
 Gallery.Image = function GalleryImage({ children, ...restProps }) {
-  return <Image {...restProps}>{children}</Image>
+  return (
+    <ImageWrapper>
+      <Image {...restProps}>{children}</Image>
+    </ImageWrapper>
+  )
 }

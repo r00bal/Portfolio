@@ -30,7 +30,7 @@ const Main = styled.main`
 `
 const Layout = ({ children, siteAuthor = 'Panda', location }) => (
   <>
-    <GlobalStyle />
+    <GlobalStyle location={location.pathname === '/projects'} />
     <Header>
       <Header.Wrapper>
         <Nav>
@@ -54,7 +54,7 @@ const Layout = ({ children, siteAuthor = 'Panda', location }) => (
         </Nav>
       </Header.Wrapper>
     </Header>
-    <Main IndexPage={location.pathname !== '/'}>{children}</Main>
+    <Main>{children}</Main>
     {location.pathname !== '/' ? (
       <Footer>
         <Footer.Wrapper>

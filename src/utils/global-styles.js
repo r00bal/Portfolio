@@ -52,7 +52,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-size: 16px;
     font-weight: normal;
-    /* background-color: var(--main-background-color); */
+    /* ${({ location }) => (location ? `background-color: var(--main15-background-color); ` : null)} */
+        
+        /* background-color: var(--main-background-color); */
     font-family: 'Open Sans';
     box-sizing: border-box;
     list-style: none;
