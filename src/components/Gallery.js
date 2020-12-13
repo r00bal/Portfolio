@@ -30,8 +30,8 @@ const Container = styled.section`
 const Item = styled.div`
   overflow: hidden;
   //grid-column-end: span 4;
-  background-color: var(--white-color);
-  color: #10162f;
+  background-color: var(--blackGray-color);
+  color: var(--black-color);
   padding: 1rem;
   /* border-width: 1px;
   border-color: #10162f;
@@ -51,6 +51,7 @@ const Item = styled.div`
 `
 
 const Text = styled.p`
+  color: var(--white-color);
   font-size: 1rem;
   line-height: 2rem;
   font-weight: 500;
@@ -65,8 +66,15 @@ const Image = styled(Img)`
   height: 100%;
 `
 
+const ImgSrc = styled.img`
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+`
+
 const Subtitle = styled.h5`
   font-size: 1.2rem;
+  color: var(--white-color);
 `
 const Logo = styled.h4`
   align-self: center;
@@ -104,16 +112,6 @@ const ItemWrapper = styled(animated.div)`
     }
   }
 `
-
-// const Subtitle = styled.h3`
-//   text-align: center;
-//   line-height: 2rem;
-//   font-size: 1.25rem;
-//   color: var(--blue-color);
-//   font-weight: 500;
-//   line-height: 1.5;
-//   transition: all 0.2s;
-// `
 
 export default function Gallery({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>
@@ -157,6 +155,10 @@ Gallery.ItemLink = function GalleryItemLink({ children, ...restProps }) {
 
 Gallery.Title = function GalleryTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>
+}
+
+Gallery.ImgSrc = function GalleryImgSrc({ children, ...restProps }) {
+  return <ImgSrc {...restProps} />
 }
 
 Gallery.Image = function GalleryImage({ children, ...restProps }) {
