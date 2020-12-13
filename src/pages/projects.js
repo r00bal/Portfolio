@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Layout } from '../layouts'
-import { Gallery, Intro } from '../components'
+import { Gallery } from '../components'
 import cart from '../assets/images/cart.svg'
 import reddit from '../assets/images/reddit.svg'
 import netflix from '../assets/images/netflix2.svg'
@@ -35,24 +35,8 @@ const ProjectsDATA = [
 ]
 
 export default function Projects({ location }) {
-  const { allImageSharp } = useStaticQuery(graphql`
-    query gallery {
-      allImageSharp {
-        edges {
-          node {
-            id
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    }
-  `)
-  const { edges } = allImageSharp
   return (
     <Layout location={location}>
-      {console.log(edges)}
       <Gallery.Title>Projects</Gallery.Title>
       <Gallery>
         {ProjectsDATA.map(({ subtitle, tech, logo }, index) => {
