@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { mediaAbove, marginProps, maxWidth, colorProps, hoverProps, textAlignProps } from '../utils/css-helpers'
-import { ButtonLink } from '.'
+import { ButtonLink, IconLink } from '.'
 
 const Container = styled.footer`
   padding: 1rem;
@@ -61,13 +61,9 @@ const IconWrapper = styled.div`
   width: 230px;
 `
 
-const IconLink = styled.a`
+export const FooterIconLinkWrapper = styled(IconLink)`
   padding: 1rem;
-  text-decoration: none;
   font-size: 0.8rem;
-  cursor: pointer;
-  ${colorProps}
-  ${hoverProps}
 `
 const Text = styled.p`
   color: var(--black-color);
@@ -98,7 +94,7 @@ Footer.Wrapper = function FooterWrapper({ children, ...restProps }) {
 }
 
 Footer.IconLink = function FooterIconLink({ children, ...restProps }) {
-  return <IconLink {...restProps}>{children}</IconLink>
+  return <FooterIconLinkWrapper {...restProps}>{children}</FooterIconLinkWrapper>
 }
 
 Footer.Button = function FooterButtonLink({ children, ...restProps }) {

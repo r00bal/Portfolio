@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components/macro'
 import { useSpring, animated } from 'react-spring'
 import Img from 'gatsby-image'
@@ -64,6 +65,7 @@ const ImageWrapper = styled.div`
 `
 const Image = styled(Img)`
   height: 100%;
+  min-height: 100%;
 `
 
 const ImgSrc = styled.img`
@@ -99,7 +101,7 @@ const Title = styled.h2`
   margin: 0 auto;
 `
 
-const ItemLink = styled.a``
+const ItemLink = styled(Link)``
 
 const ItemWrapper = styled(animated.div)`
   position: relative;

@@ -30,7 +30,7 @@ const Main = styled.main`
 `
 const Layout = ({ children, siteAuthor = 'Panda', location }) => (
   <>
-    <GlobalStyle location={location.pathname === '/projects'} />
+    <GlobalStyle />
     <Header>
       <Header.Wrapper>
         <Nav>
@@ -55,7 +55,7 @@ const Layout = ({ children, siteAuthor = 'Panda', location }) => (
       </Header.Wrapper>
     </Header>
     <Main>{children}</Main>
-    {location.pathname !== '/' ? (
+    {location && location.pathname !== '/' ? (
       <Footer>
         <Footer.Wrapper>
           <Footer.Subtitle>Interested in doing a project together ?</Footer.Subtitle>

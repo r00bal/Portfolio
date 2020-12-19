@@ -8,14 +8,12 @@ const ButtonLink = styled.a`
   text-align: center;
   padding: 1.275rem 0.675rem;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.4;
   font-weight: 100;
   width: fit-content;
   min-width: 200px;
-
   cursor: pointer;
   display: block;
-
   &:after {
     content: '';
     position: absolute;

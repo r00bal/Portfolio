@@ -5,8 +5,20 @@
  */
 const path = require(`path`)
 module.exports = {
+  siteMetadata: {
+    title: `Piotr's Portfolio`,
+    description: `Frontend developer portfolio page`,
+    author: `@Panda`,
+  },
   /* Your site config here */
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/markdown`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,6 +27,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-styled-components`,

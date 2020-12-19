@@ -1,8 +1,11 @@
+/* eslint-disable import/no-cycle */
 export { default as Header } from './Header'
 export { default as ButtonLink } from './Button'
+export { default as IconLink } from './IconLink'
 export { default as Nav } from './Navigation'
 export { default as Card } from './Card'
 export { default as Intro } from './Intro'
 export { default as Footer } from './Footer'
 export { default as Portrait } from './Portrait'
 export { default as Gallery } from './Gallery'
+export { default as Project } from './Project'
