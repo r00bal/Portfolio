@@ -64,7 +64,7 @@ const Item = styled.div`
   grid-column-end: span 8;
   ${mediaAbove.smallScreen`
   grid-column-end: span ${({ span }) => (span ? `${span}` : `4`)};
-  box-shadow: 5px 15px 55px rgba(0, 0, 0, 0.2);
+  // box-shadow: 5px 15px 55px rgba(0, 0, 0, 0.2);
   `}
 `
 
@@ -79,9 +79,13 @@ const Box = styled.div`
 `
 
 const Line = styled.div`
+  display: none;
   height: 1px;
   width: 6rem;
   border: 1px solid var(--darkGray-color);
+  ${mediaAbove.mediumScreen`
+  display:block
+  `}
 `
 
 const Text = styled.p`
