@@ -9,7 +9,6 @@ import { SlideIn } from '../animations'
 
 export default function ProjectTemplate({ location, data }) {
   const windowWidth = useWindowSize().width
-
   const left = windowWidth > 1000 ? (windowWidth - 1000) / 2 : 0
   const { allFile, markdownRemark } = data
   const { title, desc, tech } = markdownRemark.frontmatter

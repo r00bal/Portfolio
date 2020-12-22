@@ -33,20 +33,49 @@ const ProjectsDATA = [
 ]
 
 export default function Projects({ location }) {
+  const { allMarkdownRemark } = useStaticQuery(graphql`
+    query Projects {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              icon {
+                publicURL
+              }
+              key
+              desc
+              tech
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <Layout location={location}>
+      {console.log(allMarkdownRemark.edges)}
       <Gallery.Title>Projects</Gallery.Title>
       <Gallery>
-        {ProjectsDATA.map(({ subtitle, tech, logo, path }, index) => {
-          const key = `${subtitle}_${index}`
-
+        {allMarkdownRemark.edges.map(({ node }, index) => {
+          const { title, key, desc, tech, icon } = node.frontmatter
+          console.log(node.frontmatter)
           return (
             <Gallery.ItemWrapper key={key}>
-              <Gallery.ItemLink to={`${path}`}>
+              <Gallery.ItemLink to={`${key}`}>
                 <Gallery.Item>
-                  <Gallery.Subtitle>{subtitle}</Gallery.Subtitle>
-                  <Gallery.ImgSrc src={logo} />
-                  <Gallery.Text> {tech}</Gallery.Text>
+                  <Gallery.Subtitle>{title}</Gallery.Subtitle>
+                  <Gallery.ImgSrc src={icon.publicURL} />
+                  <Gallery.Text
+                    css={`
+                      max-width: 500px;
+                      justify-self: end;
+                      align-self: end;
+                    `}
+                  >
+                    {' '}
+                    {tech}
+                  </Gallery.Text>
                 </Gallery.Item>
               </Gallery.ItemLink>
             </Gallery.ItemWrapper>

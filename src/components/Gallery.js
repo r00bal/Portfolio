@@ -45,7 +45,7 @@ const Item = styled.div`
   transition: 200ms transform;
   display: grid;
   /* grid-template-rows: repeat(3, max-content) 1fr max-content; */
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 50px 200px 1fr;
 
   //min-height: 11.25rem;
   min-height: 24.5rem;
@@ -70,6 +70,8 @@ const Image = styled(Img)`
 
 const ImgSrc = styled.img`
   width: 100%;
+  max-width: 600px;
+  max-height: 200px;
   height: 100%;
   margin: 0 auto;
 `
