@@ -8,28 +8,23 @@ import netflix from '../assets/images/icons/netflix2.svg'
 import wok from '../assets/images/icons/wok.svg'
 
 const ProjectsDATA = [
-  { path:'netflixclone',
-    logo: netflix,
-    tech: 'React, GraphQl. NodeJS',
-    subtitle: 'NETFLIX CLONE',
-    span: 8,
-  },
+  { path: 'netflixclone', logo: netflix, tech: 'React, GraphQl. NodeJS', subtitle: 'NETFLIX CLONE', span: 8 },
   {
-    path:'redditclone',
+    path: 'redditclone',
     logo: reddit,
     tech: 'React, GraphQl. NodeJS',
     subtitle: 'REDDIT CLONE',
     span: 4,
   },
   {
-    path:'sickfits',
+    path: 'sickfits',
     logo: cart,
     tech: 'React, GraphQl. NodeJS',
     subtitle: 'SICK FITS SHOP',
     span: 4,
   },
   {
-    path:'streetwok',
+    path: 'streetwok',
     logo: wok,
     tech: 'React, GraphQl. NodeJS',
     subtitle: 'STREET FOOD',

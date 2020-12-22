@@ -11,25 +11,24 @@ export default function ProjectTemplate({ location, data }) {
   const windowWidth = useWindowSize().width
 
   const left = windowWidth > 1000 ? (windowWidth - 1000) / 2 : 0
-  console.log(windowWidth)
   const { allFile, markdownRemark } = data
-  const home = allFile.edges.filter(({ node }) => node.childImageSharp.fluid.src.includes('home'))
+  const { title, desc, tech } = markdownRemark.frontmatter
   return (
     <Layout location={location}>
-      {console.log(home)}
       {console.log(allFile)}
       {console.log(markdownRemark)}
       <Project>
         <Project.Image
           fluid={allFile.edges[0].node.childImageSharp.fluid}
           css={`
+            border: 1px solid var(--black-color);
             max-height: 600px;
             margin: 0 auto;
           `}
         />
         <Project.Box className="mt6rem">
           <SlideIn d={100}>
-            <Project.Title>Street Food Wok</Project.Title>
+            <Project.Title>{title}</Project.Title>
           </SlideIn>
 
           <Project.Line className="mt3rem" />
@@ -41,14 +40,7 @@ export default function ProjectTemplate({ location, data }) {
             `}
           >
             <SlideIn d={200}>
-              <Project.Text>
-                This is a restaurant page template. Made in React GatsbyJS and Data CMS. I treat it as my
-                ‘styled-component’ and ‘react spring’ playground. I mixed here a bit of BEM into CSS-in-JS. I was trying
-                to achieve a gentle scrolling parallax effect connected with smooth animations. I was struggling with
-                making the menu button and navigation panel accessible by adding a keyboard control but at the end I
-                think it worked out pretty well. View the site and let me know what you think—technologies used in this
-                project: Gatsby, GraphQL, styled-components, react-spring, BEM modifiers.{' '}
-              </Project.Text>
+              <Project.Text>{desc}</Project.Text>
             </SlideIn>
             <SlideIn d={100}>
               <Project.Box
@@ -69,52 +61,79 @@ export default function ProjectTemplate({ location, data }) {
         </Project.Box>
 
         <Project.FullWidthBox className="mt6rem" windowWidth={windowWidth} left={left}>
-          <Project.Gallery className="mt6rem">
-            <Project.Item span="5">
-              <SlideIn
-                d={100}
-                css={`
-                  width: 100%;
-                  height: 100%;
-                `}
-              >
-                <Project.Image fluid={allFile.edges[1].node.childImageSharp.fluid} />
-              </SlideIn>
-            </Project.Item>
-            <Project.Item span="3">
-              <SlideIn
-                d={300}
-                css={`
-                  width: 100%;
-                  height: 100%;
-                `}
-              >
-                <Project.Image fluid={allFile.edges[2].node.childImageSharp.fluid} />
-              </SlideIn>
-            </Project.Item>
-            <Project.Item span="3">
-              <SlideIn
-                d={100}
-                css={`
-                  width: 100%;
-                  height: 100%;
-                `}
-              >
-                <Project.Image fluid={allFile.edges[3].node.childImageSharp.fluid} />
-              </SlideIn>
-            </Project.Item>
-            <Project.Item span="5">
-              <SlideIn
-                d={300}
-                css={`
-                  width: 100%;
-                  height: 100%;
-                `}
-              >
-                <Project.Image fluid={allFile.edges[4].node.childImageSharp.fluid} />
-              </SlideIn>
-            </Project.Item>
-          </Project.Gallery>
+          {allFile.edges.length > 3 ? (
+            <Project.Gallery className="mt6rem">
+              <Project.Item span="5">
+                <SlideIn
+                  d={100}
+                  css={`
+                    width: 100%;
+                    height: 100%;
+                  `}
+                >
+                  <Project.Image fluid={allFile.edges[1].node.childImageSharp.fluid} />
+                </SlideIn>
+              </Project.Item>
+              <Project.Item span="3">
+                <SlideIn
+                  d={300}
+                  css={`
+                    width: 100%;
+                    height: 100%;
+                  `}
+                >
+                  <Project.Image fluid={allFile.edges[2].node.childImageSharp.fluid} />
+                </SlideIn>
+              </Project.Item>
+              <Project.Item span="3">
+                <SlideIn
+                  d={100}
+                  css={`
+                    width: 100%;
+                    height: 100%;
+                  `}
+                >
+                  <Project.Image fluid={allFile.edges[3].node.childImageSharp.fluid} />
+                </SlideIn>
+              </Project.Item>
+              <Project.Item span="5">
+                <SlideIn
+                  d={300}
+                  css={`
+                    width: 100%;
+                    height: 100%;
+                  `}
+                >
+                  <Project.Image fluid={allFile.edges[4].node.childImageSharp.fluid} />
+                </SlideIn>
+              </Project.Item>
+            </Project.Gallery>
+          ) : (
+            <Project.Gallery className="mt6rem">
+              <Project.Item span="4">
+                <SlideIn
+                  d={100}
+                  css={`
+                    width: 100%;
+                    height: 100%;
+                  `}
+                >
+                  <Project.Image fluid={allFile.edges[1].node.childImageSharp.fluid} />
+                </SlideIn>
+              </Project.Item>
+              <Project.Item span="4">
+                <SlideIn
+                  d={300}
+                  css={`
+                    width: 100%;
+                    height: 100%;
+                  `}
+                >
+                  <Project.Image fluid={allFile.edges[2].node.childImageSharp.fluid} />
+                </SlideIn>
+              </Project.Item>
+            </Project.Gallery>
+          )}
         </Project.FullWidthBox>
       </Project>
     </Layout>
@@ -126,6 +145,8 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        desc
+        tech
       }
     }
     allFile(filter: { relativeDirectory: { eq: $key } }, sort: { fields: [name], order: ASC }) {

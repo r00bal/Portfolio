@@ -38,9 +38,10 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then((result) => {
     // Create blog pages:
-    
+
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       console.log(node)
+      console.log(node.fields.slug)
       createPage({
         path: `projects${node.fields.slug}`,
         component: path.resolve(`./src/templates/ProjectTemplate.js`),
