@@ -23,14 +23,14 @@ const ButtonLink = styled.a`
     bottom: 0;
     left: 0;
     border: 1px solid var(--blue-color);
-    transition: transform 0.8s ease;
+    transition: transform 0.2s ease;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   &:hover {
     //color: var(--white-color);
     &:after {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
     //border: 1px solid var(--blue-color);
     //background: var(--blue-color);
