@@ -57,32 +57,27 @@ const ButtonLinkWrapper = styled.a`
 `
 
 const ButtonLink = ({ children }) => {
-  const [hover, setHover] = useState(false)
+  const [hover, setHover] = useState(0)
 
   return (
-    <ButtonLinkWrapper onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-      <div
-        css={`
-          display: ${hover ? 'none' : 'block'};
-        `}
-      >
-        {children.split('')}
+    <ButtonLinkWrapper onMouseEnter={() => setHover(hover + 1)}>
+      <div>
+        <RollTrail from={{ y: 0, x: 0, o: 1, z: 0 }} to={{ y: -5, x: 0, o: 0, z: 0 }} state={hover}>
+          {children.split('')}
+        </RollTrail>
       </div>
+
       <div
         css={`
-          display: ${hover ? 'block' : 'none'};
-
-          /* position: absolute;
+          position: absolute;
           top: 0;
           right: 0;
           left: 0;
           bottom: 0;
           margin: auto;
-          width: 100%;
-          height: 100%; */
         `}
       >
-        <RollTrail from={{ y: 8, x: 90, o: 1, z: 0 }} to={{ y: 0, x: 0, o: 1, z: 0 }} state={hover}>
+        <RollTrail from={{ y: 30, x: 90, o: 0, z: 0 }} to={{ y: 21, x: 0, o: 1, z: 0 }} state={hover}>
           {children.split('')}
         </RollTrail>
       </div>
