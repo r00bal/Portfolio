@@ -27,6 +27,7 @@ export default function SqueezeTrail({ children, delay = 0 }) {
         }
         return (
           <animated.span
+            aria-hidden="true"
             key={`${items[index]}_${index}`}
             style={{
               ...rest,

@@ -37,6 +37,7 @@ export default function Home({ location }) {
           `}
         >
           <Intro.Title
+            aria-label="Hi"
             css={`
               width: 100%;
               text-align: left;

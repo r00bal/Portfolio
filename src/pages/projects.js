@@ -68,7 +68,7 @@ export default function Projects({ location }) {
                   <Gallery.ImgSrc src={icon.publicURL} />
                   <Gallery.Text
                     css={`
-                      max-width: 500px;
+                      max-width: 350px;
                       justify-self: end;
                       align-self: end;
                     `}

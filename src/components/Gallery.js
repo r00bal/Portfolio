@@ -53,8 +53,8 @@ const Item = styled.div`
 
 const Text = styled.p`
   color: var(--white-color);
-  font-size: 1rem;
-  line-height: 2rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
   font-weight: 500;
   margin: 20px 0;
   text-align: right;

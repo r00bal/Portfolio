@@ -19,7 +19,7 @@ export default function Home({ location }) {
     <Layout location={location}>
       <Intro>
         {console.log('location ', location)}
-        <Intro.Title hoverColor="var(--green-color)">
+        <Intro.Title hoverColor="var(--green-color)" aria-label="Hi I'm Piotr">
           {INTRO_TEXT.map((word, index) => {
             const delay = index * 200
             return (

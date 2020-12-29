@@ -18,6 +18,7 @@ const SqueezeSpring = ({ children }) => {
 
   return (
     <animated.span
+      aria-hidden="true"
       onMouseEnter={() => toggle(true)}
       style={{
         display: 'inline-flex',
