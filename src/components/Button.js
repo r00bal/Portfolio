@@ -56,11 +56,11 @@ const ButtonLinkWrapper = styled.a`
   `}
 `
 
-const ButtonLink = ({ children }) => {
+const ButtonLink = ({ children, ...rest }) => {
   const [hover, setHover] = useState(0)
 
   return (
-    <ButtonLinkWrapper onMouseEnter={() => setHover(hover + 1)}>
+    <ButtonLinkWrapper {...rest} onMouseEnter={() => setHover(hover + 1)}>
       <div>
         <RollTrail from={{ y: 0, x: 0, o: 1, z: 0 }} to={{ y: -5, x: 0, o: 0, z: 0 }} state={hover}>
           {children.split('')}

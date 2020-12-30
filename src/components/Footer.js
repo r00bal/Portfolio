@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-import { mediaAbove, marginProps, maxWidth, colorProps, hoverProps, textAlignProps } from '../utils/css-helpers'
+import styled from 'styled-components/macro'
+import { mediaAbove, marginProps, maxWidth } from '../utils/css-helpers'
 import { ButtonLink, IconLink } from '.'
 
 const Container = styled.footer`
@@ -39,7 +39,6 @@ const Wrapper = styled.div`
  padding-right: 3rem;
 `}
 `
-const FooterButton = styled(ButtonLink)``
 
 const Box = styled.div`
   height: 100%;
@@ -97,8 +96,8 @@ Footer.IconLink = function FooterIconLink({ children, ...restProps }) {
   return <FooterIconLinkWrapper {...restProps}>{children}</FooterIconLinkWrapper>
 }
 
-Footer.Button = function FooterButtonLink({ children, ...restProps }) {
-  return <FooterButton {...restProps}>{children}</FooterButton>
+Footer.Button = function FooterButton({ children, ...restProps }) {
+  return <ButtonLink {...restProps}>{children}</ButtonLink>
 }
 
 Footer.Box = function FooterBox({ children, ...restProps }) {

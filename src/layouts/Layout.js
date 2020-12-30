@@ -60,7 +60,9 @@ const Layout = ({ children, siteAuthor = 'Panda', location }) => (
         <Footer.Wrapper>
           <Footer.Subtitle>Interested in doing a project together ?</Footer.Subtitle>
           <Footer.Box>
-            <Footer.Button>Contact Me</Footer.Button>
+            <ButtonLink href="mailto:frontendpit@gmail.com" aria-label="Contact Me">
+              Contact Me
+            </ButtonLink>
             <SocialIcons color="var(--black-color)" />
           </Footer.Box>
         </Footer.Wrapper>

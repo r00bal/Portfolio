@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { animated, config, useTrail, interpolate, useSpring, useTransition } from 'react-spring'
+import React from 'react'
+import { animated, useTrail, interpolate } from 'react-spring'
 
 export default function RollTrail({ children, state, delay = 0, from, to, ...restProps }) {
   const items = React.Children.toArray(children)
@@ -29,6 +29,7 @@ export default function RollTrail({ children, state, delay = 0, from, to, ...res
         }
         return (
           <animated.span
+            aria-hidden
             key={`${items[index]}_${index}`}
             {...restProps}
             style={{

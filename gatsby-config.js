@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: `Piotr's Portfolio`,
     description: `Frontend developer portfolio page`,
-    author: `@Panda`,
+    author: `Panda`,
   },
   /* Your site config here */
   plugins: [

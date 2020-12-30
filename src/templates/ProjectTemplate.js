@@ -11,7 +11,7 @@ export default function ProjectTemplate({ location, data }) {
   const windowWidth = useWindowSize().width
   const left = windowWidth > 1000 ? (windowWidth - 1000) / 2 : 0
   const { allFile, markdownRemark } = data
-  const { title, desc, tech } = markdownRemark.frontmatter
+  const { title, desc, tech, live, github } = markdownRemark.frontmatter
   return (
     <Layout location={location}>
       {console.log(allFile)}
@@ -40,6 +40,7 @@ export default function ProjectTemplate({ location, data }) {
           >
             <SlideIn d={200}>
               <Project.Text>{desc}</Project.Text>
+              <Project.Text>Technology used: {tech}</Project.Text>
             </SlideIn>
             <SlideIn d={100}>
               <Project.Box
@@ -50,8 +51,15 @@ export default function ProjectTemplate({ location, data }) {
                   align-self: flex-start;
                 `}
               >
-                <ButtonLink href="#">Live link</ButtonLink>
-                <Project.IconLink href="#" color="var(--black-color)" hoverColor="var(--blue-color)">
+                <ButtonLink href={live} target="_blank" aria-label="Live link">
+                  Live link
+                </ButtonLink>
+                <Project.IconLink
+                  href={github}
+                  target="_blank"
+                  color="var(--black-color)"
+                  hoverColor="var(--blue-color)"
+                >
                   <FontAwesomeIcon size="4x" icon={['fab', 'github']} title="github page" />
                 </Project.IconLink>
               </Project.Box>
@@ -146,6 +154,8 @@ export const query = graphql`
         title
         desc
         tech
+        live
+        github
       }
     }
     allFile(filter: { relativeDirectory: { eq: $key } }, sort: { fields: [name], order: ASC }) {
