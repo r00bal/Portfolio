@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { Layout } from '../layouts'
-import { Card, Portrait, Intro } from '../components'
+import { Card, Portrait, Intro, SEO } from '../components'
 import { FadeInSpring, SqueezeSpring, SqueezeTrail } from '../animations'
 import { mediaAbove } from '../utils/css-helpers'
 
@@ -26,6 +26,7 @@ const Container = styled.div`
 export default function Home({ location }) {
   return (
     <Layout location={location}>
+      <SEO title="About me" />
       <Container>
         <Portrait />
         <Card

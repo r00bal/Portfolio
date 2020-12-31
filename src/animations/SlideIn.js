@@ -12,7 +12,7 @@ const direction = {
   right: 'translate3d(100px,0,0)',
 }
 
-const AnimatedDiv = styled(animated.div)``
+const AnimatedDiv = styled(animated.span)``
 
 const SlideIn = ({ children, d = 0, from = 'down', ...rest }) => {
   const [isVisible, setIsVisible] = useState(false)

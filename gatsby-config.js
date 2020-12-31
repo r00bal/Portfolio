@@ -7,7 +7,20 @@ const path = require(`path`)
 module.exports = {
   siteMetadata: {
     title: `Piotr's Portfolio`,
-    description: `Frontend developer portfolio page`,
+    description: `This is Piotr's portfolio page where you can find some of his latest projects`,
+    keywords: [
+      `Frontend developer`,
+      `React`,
+      `JavaScript`,
+      `HTML`,
+      `CSS`,
+      `Portfolio`,
+      `Projects`,
+      `Works`,
+      `Frontend development`,
+      `Programming`,
+    ],
+    image: '',
     author: `Panda`,
   },
   /* Your site config here */

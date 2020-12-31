@@ -48,5 +48,3 @@ export const mediaAbove = Object.keys(size).reduce((acc, label) => {
   `
   return acc
 }, {})
-
-console.log('mediaAbove', mediaAbove)

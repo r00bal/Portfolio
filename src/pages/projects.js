@@ -1,36 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Layout } from '../layouts'
-import { Gallery } from '../components'
-import cart from '../assets/images/icons/cart.svg'
-import reddit from '../assets/images/icons/reddit.svg'
-import netflix from '../assets/images/icons/netflix2.svg'
-import wok from '../assets/images/icons/wok.svg'
-
-const ProjectsDATA = [
-  { path: 'netflixclone', logo: netflix, tech: 'React, GraphQl. NodeJS', subtitle: 'NETFLIX CLONE', span: 8 },
-  {
-    path: 'redditclone',
-    logo: reddit,
-    tech: 'React, GraphQl. NodeJS',
-    subtitle: 'REDDIT CLONE',
-    span: 4,
-  },
-  {
-    path: 'sickfits',
-    logo: cart,
-    tech: 'React, GraphQl. NodeJS',
-    subtitle: 'SICK FITS SHOP',
-    span: 4,
-  },
-  {
-    path: 'streetwok',
-    logo: wok,
-    tech: 'React, GraphQl. NodeJS',
-    subtitle: 'STREET FOOD',
-    span: 8,
-  },
-]
+import { Gallery, SEO } from '../components'
 
 export default function Projects({ location }) {
   const { allMarkdownRemark } = useStaticQuery(graphql`
@@ -54,12 +25,11 @@ export default function Projects({ location }) {
   `)
   return (
     <Layout location={location}>
-      {console.log(allMarkdownRemark.edges)}
+      <SEO title="Projects" />
       <Gallery.Title>Projects</Gallery.Title>
       <Gallery>
         {allMarkdownRemark.edges.map(({ node }, index) => {
-          const { title, key, desc, tech, icon } = node.frontmatter
-          console.log(node.frontmatter)
+          const { title, key, tech, icon } = node.frontmatter
           return (
             <Gallery.ItemWrapper key={key}>
               <Gallery.ItemLink to={`${key}`}>

@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react'
 
 import styled from 'styled-components/macro'
 import { Layout, SocialIcons } from '../layouts'
-import { Intro } from '../components'
+import { Intro, SEO } from '../components'
 import { FadeInSpring, SqueezeSpring, SqueezeTrail } from '../animations'
 import '../utils/font-awesome'
 
@@ -17,19 +17,19 @@ const NoWrap = styled.span`
 export default function Home({ location }) {
   return (
     <Layout location={location}>
+      <SEO title="Home" />
       <Intro>
-        {console.log('location ', location)}
         <Intro.Title hoverColor="var(--green-color)" aria-label="Hi I'm Piotr">
           {INTRO_TEXT.map((word, index) => {
             const delay = index * 200
             return (
-              <>
+              <span key={`${word}_${index}`}>
                 <NoWrap>
                   <SqueezeTrail delay={delay}>
                     {word.split('').map((l) => {
                       if (l === 'H') {
                         return (
-                          <SqueezeSpring>
+                          <SqueezeSpring key={`${l}_${index}`}>
                             <Intro.Special color="var(--green-color)" shadow="var(--blue-color)">
                               {l}
                             </Intro.Special>
@@ -38,7 +38,7 @@ export default function Home({ location }) {
                       }
                       if (l === 'P') {
                         return (
-                          <SqueezeSpring>
+                          <SqueezeSpring key={`${l}_${index}`}>
                             <Intro.Special color="var(--green-color)" shadow="var(--blue-color)">
                               {l}
                             </Intro.Special>
@@ -47,18 +47,18 @@ export default function Home({ location }) {
                       }
                       if (l === 'e') {
                         return (
-                          <>
+                          <span key={`${l}_${index}`}>
                             <SqueezeSpring>{l}</SqueezeSpring>
-                            <br />
-                          </>
+                            <br key={`br_${index}`} />
+                          </span>
                         )
                       }
-                      return <SqueezeSpring>{l}</SqueezeSpring>
+                      return <SqueezeSpring key={`${l}_${index}`}>{l}</SqueezeSpring>
                     })}
                   </SqueezeTrail>
                 </NoWrap>
                 {'  '}
-              </>
+              </span>
             )
           })}
         </Intro.Title>

@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import { graphql } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Layout } from '../layouts'
-import { Project, ButtonLink, Footer } from '../components'
+import { Project, ButtonLink, SEO } from '../components'
 import { useWindowSize } from '../hooks'
 import { SlideIn } from '../animations'
 
@@ -14,13 +14,13 @@ export default function ProjectTemplate({ location, data }) {
   const { title, desc, tech, live, github } = markdownRemark.frontmatter
   return (
     <Layout location={location}>
-      {console.log(allFile)}
-      {console.log(markdownRemark)}
+      <SEO title={title} />
       <Project>
         <Project.Image
           fluid={allFile.edges[0].node.childImageSharp.fluid}
           css={`
-            border: 1px solid var(--black-color);
+            /* border: 1px solid var(--black-color); */
+            box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.3);
             max-height: 600px;
             margin: 0 auto;
           `}

@@ -99,7 +99,7 @@ const Title = styled.h2`
   font-weight: 500;
   line-height: 1.2;
   text-align: center;
-  padding: 100px 0;
+  padding: 50px 0;
   margin: 0 auto;
 `
 
