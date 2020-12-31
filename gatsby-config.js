@@ -48,6 +48,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-preload-fonts`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
