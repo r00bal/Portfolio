@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSpring, animated, interpolate } from 'react-spring'
 import styled from 'styled-components'
 
@@ -10,11 +10,21 @@ const SqueezeSpring = ({ children }) => {
     config: { mass: 3, tension: 300, friction: 5 },
     reset: state,
     onStart: () => {
-      const timer = setTimeout(() => toggle(false), 2000)
-      return () => clearTimeout(timer)
+      // const timer = setTimeout(() => toggle(false), 2000)
+      // return () => clearTimeout(timer)
+      // toggle(false)
     },
     onRest: () => toggle(false),
   })
+
+  useEffect(() => {
+    if (state) {
+      const timer = setTimeout(() => toggle(false), 1000)
+      return () => {
+        clearTimeout(timer)
+      }
+    }
+  }, [state])
 
   return (
     <animated.span
