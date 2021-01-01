@@ -12,13 +12,14 @@ const RotateDiv = styled.div`
 `
 
 const ButtonLinkWrapper = styled.a`
+  margin: 2px;
   position: relative;
   color: var(--blue-color);
   text-decoration: none;
   text-align: center;
-  padding: 1.275rem 0.675rem;
+  padding: 1.275rem 0.685rem 1.275rem 0.68rem;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1;
   font-weight: 100;
   width: fit-content;
   min-width: 200px;
