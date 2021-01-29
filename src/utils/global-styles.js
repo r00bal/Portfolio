@@ -56,7 +56,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-size: 16px;
     font-weight: normal;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
     list-style: none;
     font-size:16px;
