@@ -56,11 +56,28 @@ module.exports = {
       },
     },
     `gatsby-plugin-fontawesome-css`,
+    // {
+    //   resolve: 'gatsby-plugin-web-font-loader',
+    //   options: {
+    //     google: {
+    //       families: ['Source Code Pro:200,500,700,900', 'Open Sans:,300,400,600,700,800'],
+    //     },
+    //   },
+    // },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        google: {
-          families: ['Source Code Pro:200,500,700,900', 'Open Sans:,300,400,600,700,800'],
+        fonts: {
+          google: [
+            {
+              family: 'Source Code Pro',
+              variants: ['200', '500', '700', '900'],
+            },
+            {
+              family: 'Open Sans',
+              variants: ['300', '400', '600', '700', '800'],
+            },
+          ],
         },
       },
     },
