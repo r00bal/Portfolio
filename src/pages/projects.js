@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Layout } from '../layouts'
@@ -6,7 +7,7 @@ import { Gallery, SEO } from '../components'
 export default function Projects({ location }) {
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query Projects {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: {fields: [frontmatter___number], order: ASC}) {
         edges {
           node {
             frontmatter {
@@ -17,6 +18,7 @@ export default function Projects({ location }) {
               desc
               tech
               title
+              number
             }
           }
         }
@@ -30,9 +32,10 @@ export default function Projects({ location }) {
       <Gallery>
         {allMarkdownRemark.edges.map(({ node }, index) => {
           const { title, key, tech, icon } = node.frontmatter
+          const url = key === 'more' ? '#' : key
           return (
             <Gallery.ItemWrapper key={key}>
-              <Gallery.ItemLink to={`${key}`}>
+              <Gallery.ItemLink to={`${url}`}>
                 <Gallery.Item>
                   <Gallery.Subtitle>{title}</Gallery.Subtitle>
                   <Gallery.ImgSrc src={icon.publicURL} />

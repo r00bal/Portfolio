@@ -1,5 +1,6 @@
 ---
 key: streetwok
+number: 4
 title: Street Food Wok
 desc: This is a restaurant page template. Made in React GatsbyJS and Data CMS. I treat it as my ‘styled-component’ and ‘react spring’ playground. I mixed here a bit of BEM into CSS-in-JS. I was trying to achieve a gentle scrolling parallax effect connected with smooth animations. I made my own icons for the navigation panel add added keyboard control to it.
 tech: React/Gatsby.js, GraphQL, Styled components, React Spring
