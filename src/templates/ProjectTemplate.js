@@ -51,12 +51,11 @@ export default function ProjectTemplate({ location, data }) {
                   align-self: flex-start;
                 `}
               >
-                <ButtonLink href={live} target="_blank" aria-label="Live link">
+                <ButtonLink href={live} aria-label="Live link">
                   Live link
                 </ButtonLink>
                 <Project.IconLink
                   href={github}
-                  target="_blank"
                   color="var(--black-color)"
                   hoverColor="var(--blue-color)"
                 >
