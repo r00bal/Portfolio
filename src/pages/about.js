@@ -7,11 +7,14 @@ import { FadeInSpring, SqueezeSpring, SqueezeTrail } from '../animations'
 import { mediaAbove } from '../utils/css-helpers'
 
 const LinkStyles = css`
-  text-decoration: underline;
-  color: inherit;
+  color: var(--blue-color);
+  font-weight: bold;
   cursor: pointer;
   position: relative;
   z-index: 50;
+  &:hover {
+    color: var(--green-color);
+  }
 `
 
 const Container = styled.div`
