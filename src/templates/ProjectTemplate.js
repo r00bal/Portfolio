@@ -40,7 +40,6 @@ export default function ProjectTemplate({ location, data }) {
           >
             <SlideIn d={200}>
               <Project.Text>{desc}</Project.Text>
-              <Project.Text>Technology used: {tech}</Project.Text>
             </SlideIn>
             <SlideIn d={100}>
               <Project.Box
@@ -54,11 +53,7 @@ export default function ProjectTemplate({ location, data }) {
                 <ButtonLink href={live} aria-label="Live link">
                   Live link
                 </ButtonLink>
-                <Project.IconLink
-                  href={github}
-                  color="var(--black-color)"
-                  hoverColor="var(--blue-color)"
-                >
+                <Project.IconLink href={github} color="var(--black-color)" hoverColor="var(--blue-color)">
                   <FontAwesomeIcon size="4x" icon={['fab', 'github']} title="github page" />
                 </Project.IconLink>
               </Project.Box>

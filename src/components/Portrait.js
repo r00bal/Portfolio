@@ -9,8 +9,9 @@ export const Container = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   z-index: 0;
+  pointer-events: all;
   ${mediaAbove.mediumScreen`
- 
+  pointer-events: all;
   `}
   ${mediaAbove.largeScreen`
   top: 0;
@@ -20,6 +21,9 @@ export const Container = styled.div`
   position: absolute;
   margin-top: 10%;
   padding-left: 10%;
+ 
+               
+    
   `}
 
   svg {

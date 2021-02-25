@@ -1,9 +1,18 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Link } from 'gatsby'
 import { Layout } from '../layouts'
 import { Card, Portrait, Intro, SEO } from '../components'
 import { FadeInSpring, SqueezeSpring, SqueezeTrail } from '../animations'
 import { mediaAbove } from '../utils/css-helpers'
+
+const LinkStyles = css`
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  z-index: 50;
+`
 
 const Container = styled.div`
   width: 100%;
@@ -11,6 +20,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   ${mediaAbove.mediumScreen`
    flex-direction: row;
   justify-content: flex-end;
@@ -24,10 +34,11 @@ const Container = styled.div`
 `
 
 const ExternalLink = styled.a`
-  text-decoration: underline;
-  color: inherit;
-  cursor: pointer;
-  z-index: 100;
+  ${LinkStyles}
+`
+
+const InternalLink = styled(Link)`
+  ${LinkStyles}
 `
 
 export default function About({ location }) {
@@ -35,12 +46,17 @@ export default function About({ location }) {
     <Layout location={location}>
       <SEO title="About me" />
       <Container>
-        <Portrait />
+        <Portrait
+          css={`
+            pointer-events: all;
+          `}
+        />
         <Card
           css={`
             max-width: 400px;
             ${mediaAbove.largeScreen`
    margin-right: 10%;
+   
   `}
           `}
         >
@@ -62,12 +78,15 @@ export default function About({ location }) {
           </Intro.Title>
           <FadeInSpring delay={500}>
             <Card.Text margin="20px 0 0 0">
-              I'm Pit. I learn to code. I am a big fan of frontend development, but I like to make my hands dirty also
-              on the backend side. I have done several projects with technologies such as React, GraphQL, NodeJS.
-              Currently, I am working as an HTML email developer. I'm using HTML, CSS, Javascript in my everyday work.
-              See my work history on LinkedIn. I am coding every day, trying to sharpening my programming skills to
-              become a full-stack ninja developer ;) You can check some of my Projects here or visit my GitHub and
-              Codepen profiles.
+              My name is Pit. I'm a self taught web developer from Gdynia. I am passionate about Web Technologies,
+              design and everything that's interactive. I'm learning frontend development, but also like to make my
+              hands dirty on the backend side. Every day, trying to sharpen my programming skills to become a full-stack
+              ninja developer;) Currently looking for job opportunities where I could learn new skills from
+              professionals. I have done several projects with technologies such as HTML, CSS, JavaScript, React,
+              GraphQL, NodeJS. You can check some of my <InternalLink to="/projects">Projects</InternalLink> here or
+              visit my <ExternalLink href="https://github.com/r00bal">GitHub</ExternalLink> or{' '}
+              <ExternalLink href="https://codepen.io/r00bal">Codepen</ExternalLink> profiles. Among other things I enjoy
+              funk music, water sports and spicy food.
             </Card.Text>
           </FadeInSpring>
         </Card>
