@@ -81,15 +81,16 @@ export default function About({ location }) {
           </Intro.Title>
           <FadeInSpring delay={500}>
             <Card.Text margin="20px 0 0 0">
-              My name is Pit. I'm a self taught web developer from Gdynia. I am passionate about Web Technologies,
-              design and everything that's interactive. I'm learning frontend development, but also like to make my
-              hands dirty on the backend side. Every day, trying to sharpen my programming skills to become a full-stack
-              ninja developer;) Currently looking for job opportunities where I could learn new skills from
-              professionals. I have done several projects with technologies such as HTML, CSS, JavaScript, React,
-              GraphQL, NodeJS. You can check some of my <InternalLink to="/projects">Projects</InternalLink> here or
-              visit my <ExternalLink href="https://github.com/r00bal">GitHub</ExternalLink> or{' '}
-              <ExternalLink href="https://codepen.io/r00bal">Codepen</ExternalLink> profiles. Among other things I enjoy
-              funk music, water sports and spicy food.
+              I'm Pit, a self taught web developer and I am passionate about Web Technologies, design and everything
+              that's interactive. I'm learning front-end development, but also like to make my hands dirty on the
+              back-end side. Every day I'm working on sharpening my programming skills in hopes of becoming a full-stack
+              ninja developer ;) and am currently looking for new job opportunities where I could learn new skills from
+              professionals. To enrich my toolbox, I have done several projects with technologies such as HTML, CSS,
+              JavaScript, React, GraphQL, and NodeJS, to mention but a few. You can check some of my projects{' '}
+              <InternalLink to="/projects">here</InternalLink> or visit my{' '}
+              <ExternalLink href="https://github.com/r00bal">GitHub</ExternalLink> or{' '}
+              <ExternalLink href="https://codepen.io/r00bal">Codepen</ExternalLink> profiles. Among other things, I
+              enjoy funk music, water sports and spicy food.
             </Card.Text>
           </FadeInSpring>
         </Card>

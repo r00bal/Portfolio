@@ -31,6 +31,7 @@ export default function Projects({ location }) {
       <Gallery.Title>Projects</Gallery.Title>
       <Gallery>
         {allMarkdownRemark.edges.map(({ node }, index) => {
+          console.log(node);
           const { title, key, tech, icon } = node.frontmatter
           const url = key === 'more' ? '#' : key
           return (

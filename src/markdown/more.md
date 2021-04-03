@@ -7,3 +7,4 @@ tech: React, JavaScript, TypeScript, GraphQL, MongoDB, Redux,
 icon: ../assets/images/icons/more.svg
 live: #
 github: #
+---
